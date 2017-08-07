@@ -34,6 +34,7 @@ Post - Comment : 1 대 N 관계
 - omniauth-facebook
 - chartkick
 - gem 'compass-rails' # 이미지 불러올 때 필요한 젬
+- gem 'tinymce'
 
 ## 역할분배
 - 이미지(성감대 선택) : 선홍, 다혜, 지연
