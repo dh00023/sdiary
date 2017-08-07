@@ -1,4 +1,3 @@
-
 <div id ="diaryscreen">
   <p id="notice"><%= notice %></p>
 
@@ -172,39 +171,3 @@
   <% end %>
 <% end %>
 </script>
-
-=======
-<div class="container">
-  <div class="row">
-    <div class="col">
-      사람
-    </div>
-    <div class="col">
-      <table>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Memo</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @diaries.each do |diary| %>
-            <tr>
-              <td><%= diary.category %></td>
-              <td><%= diary.memo %></td>
-              <td><%= link_to 'Show', diary %></td>
-              <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
-              <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <%= link_to 'New Diary', new_diary_path %>
-    </div>
-  </div>
-</div>
-
-<br>
->>>>>>> 2b9989658a58cbecb3fcd6ac46db45d232dbbd8c
