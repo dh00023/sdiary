@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @diary.category %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @diary.memo %>
+</p>
+
+<%= link_to 'Edit', edit_diary_path(@diary) %> |
+<%= link_to 'Back', diaries_path %>
