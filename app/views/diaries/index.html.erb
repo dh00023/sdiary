@@ -10,3 +10,83 @@
 <% end %>
 
 <%= render "lego" %>
+
+<script>
+<% @diaries.each do |diary| %>
+  <% if diary.category == "head" %>
+    $(".head").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "hair" %>
+    $(".hair").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "wrist left" %>
+    $(".wrist").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "wrist right" %>
+    $(".wrist right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "waist" %>
+    $(".waist ").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "shoulder left" %>
+    $("shoulder left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "shoulder right" %>
+    $("shoulder right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "hand left" %>
+    $(".hand left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "hand right" %>
+    $(".hand right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "leg right" %>
+    $(".leg right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "leg left" %>
+    $(".leg left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "arm left" %>
+    $(".arm left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "arm right" %>
+    $(".arm right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "foot left" %>
+    $(".foot left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "foot right" %>
+    $(".foot right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "core" %>
+    $(".core").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "hip" %>
+    $(".hip").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "body" %>
+    $(".body").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "back" %>
+    $(".back").css("background-color","red");
+  <% end %>
+<% end %>
+</script>

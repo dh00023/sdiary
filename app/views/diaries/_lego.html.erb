@@ -16,20 +16,7 @@
         </div>
       </div>
       <div class='neck'></div>
-      <div class='body'>
-        <div class='highlight'></div>
-        <div class='shirt'>
-          <div class='collar left'></div>
-          <div class='collar right'></div>
-        </div>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <div class='pen'></div>
-        <div class='pocket left'></div>
-        <div class='pocket right'></div>
-      </div>
+      <div class='body'></div>
       <div class='shoulder left'></div>
       <div class='shoulder right'></div>
       <div class='arm left'></div>
@@ -40,14 +27,9 @@
       <div class='hand right'>
         <div class='wrist'></div>
       </div>
-      <div class='belt'>
-        <div class='buckle'></div>
-      </div>
+      <div class='belt'></div>
       <div class='pelvis'>
         <div class='highlight'></div>
-        <div class='tag'>
-          <div class='id'></div>
-        </div>
         <div class='leg left'>
           <div class='foot'></div>
         </div>
@@ -60,78 +42,3 @@
   </div>
 </div>
 
-<script>
-<% @diaries.each do |diary| %>
-  <% if diary.category == "head" %>
-    $(".head").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "hair" %>
-    $(".hair").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "wrist" %>
-    $(".wrist").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "shoulder_left" %>
-    $("shoulder_left").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "shoulder_right" %>
-    $("shoulder_right").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "hand_left" %>
-    $(".hand_left").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "hand_right" %>
-    $(".hand_right").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "wrist" %>
-    $(".wrist").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "leg_right" %>
-    $(".leg_right").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "leg_left" %>
-    $(".leg_left").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "arm_left" %>
-    $(".arm_left").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "arm_right" %>
-    $(".arm_right").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "foot_left" %>
-    $(".foot_left").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "foot_right" %>
-    $(".foot_right").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "core" %>
-    $(".core").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "hip" %>
-    $(".hip").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "body" %>
-    $(".body").css("background-color","red");
-  <% end %>
-
-  <% if diary.category == "back" %>
-    $(".back").css("background-color","red");
-  <% end %>
-<% end %>
-</script>
