@@ -53,6 +53,7 @@ group :development do
   gem 'spring'
 end
 
-
+gem 'tinymce-rails'
+gem 'kaminari'
 
 
