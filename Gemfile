@@ -54,5 +54,6 @@ group :development do
 end
 
 gem 'tinymce-rails'
+gem 'kaminari'
 
 
