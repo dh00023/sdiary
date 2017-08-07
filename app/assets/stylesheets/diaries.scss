@@ -1,3 +1,780 @@
 // Place all the styles related to the diaries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "compass";
+
+
+
+body {
+//  background-color: rgb(44,76,121);
+@include filter-gradient(#2c4c79, #8dbbea, vertical);
+// @include background-image(linear-gradient(top,  rgba(44,76,121,1) 0%,rgba(141,187,234,1) 100%));
+    display: inline;
+
+    .container {
+        max-width: 300px;
+        padding: 0;
+        margin: 0 auto;
+        min-height: 600px;
+
+        :before, :after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+        }
+    }
+}
+
+@mixin pair($position, $rotate: null, $child: null) {
+    @if $child != null {
+        &.left {
+            .#{$child} { left: $position;
+                @if $rotate != null {
+                    @include transform(rotate($rotate));
+                }
+            }
+        }
+        &.right {
+            .#{$child} { right: $position;
+                @if $rotate != null {
+                    @include transform(rotate(-$rotate));
+                }
+            }
+        }
+    } @else {
+        &.left { left: $position;
+            @if $rotate != null {
+                @include transform(rotate($rotate));
+            }
+        }
+        &.right { right: $position;
+            @if $rotate != null {
+                @include transform(rotate(-$rotate));
+            }
+        }
+    }
+}
+
+@mixin pair-content($position) {
+    &:before { left: $position; }
+    &:after { right: $position; }
+}
+
+$emmet-width: 75px;
+$emmet-height: 85px;
+
+$skin-color: #FFE4C4;
+$shirt-color: #FFE4C4;
+$suit-color: #FFE4C4;
+$hair-color: #000000;
+$uv-color: #FFE4C4;
+
+$head-height: 67px;
+$neck-height: 7px;
+$hair-height: 40px;
+
+.emmet-container {
+    position: absolute;
+    height: 250px;
+    width: $emmet-width;
+    top: calc(50% - (250px / 2));
+    left: calc(50% - (#{$emmet-width} / 2));
+}
+
+.emmet {
+    height: $emmet-height;
+    width: $emmet-width;
+    margin: ($head-height + $neck-height) auto 0 auto;
+    position: relative;
+
+    * {
+        position: absolute;
+    }
+
+    $head-width: $head-height - 4px;
+
+    .head {
+        top: -($head-height + $neck-height - 1px);
+        left: calc(50% - (#{$head-width} / 2));
+        width: $head-width;
+        height: $head-height;
+        background-color: $skin-color;
+        @include box-shadow(0px 16px 10px -18px rgba(0,0,0,0.5),
+                    inset 0px -16px 5px -15px rgba(0,0,0,0.2),
+                    inset -18px 0px 15px -15px rgba(0,0,0,0.5));
+        @include border-radius(25%);
+
+        &:before {
+            left: 5px;
+            bottom: -5px;
+            width: 60%;
+            height: 100%;
+            border-radius: 20px;
+            @include filter-gradient(#f4e097, #FFFFFF, horizontal);
+            @include background-image(radial-gradient(30% 30%, ellipse cover,
+                        rgba(250,250,250,0.6) 0%,
+                        rgba(250,250,250,0) 60%));
+            filter: blur(5px);
+            z-index: 1;
+        }
+
+        $side-hair-width: 12px;
+        $hair-width: ($head-width + ($side-hair-width * 2)) - 8px;
+
+        .hair {
+            top: -($hair-height - 27px);
+            left: calc(50% - (#{$hair-width} / 2));
+            height: $hair-height;
+            width: $hair-width - 5px;
+            background: $hair-color;
+            border-radius: 50% 50% 60% 40% / 80% 50% 50% 20%;
+            z-index: 2;
+            @include box-shadow(/*inset 8px 0px 10px -5px rgba(255,255,255,0.6),*/
+                        0 7px 2px -7px rgba(0,0,0,0.5),
+                        inset 0 -12px 8px -10px rgba(0,0,0,0.6));
+
+            .highlight {
+                left: 0;
+                top: 0;
+                width: 70%;
+                height: 150%;
+                border-radius: 50%;
+                @include filter-gradient(#f4e097, #FFFFFF, horizontal);
+                @include background-image(radial-gradient(40% 40%, ellipse cover,
+                            rgba(250,250,250,0.3) 0%,
+                            rgba(250,250,250,0) 30%));
+                filter: blur(5px);
+                z-index: 1;
+                @include rotate(40deg);
+            }
+
+            span /*strands*/ {
+                border-radius: 0 0 60% 40%;
+                z-index: 2;
+                @include box-shadow(0px 4px 4px -5px rgba(255,255,255,0.5));
+                @include rotate(-7deg);
+
+                $no: 3;
+                $original-width: 60px;
+
+                &:nth-of-type(1) {
+                    bottom: 10px;
+                    right: 10px;
+                    width: $original-width - 10px;
+                    height: 18px;
+                    border-bottom: 1px solid darken($hair-color, 5%);
+                }
+
+                &:nth-of-type(2) {
+                    bottom: 20px;
+                    right: 10px;
+                    width: $original-width - 10px;
+                    height: 10px;
+                    border-bottom: 1px solid darken($hair-color, 3%);
+                }
+
+                &:nth-of-type(3) {
+                    bottom: 12px;
+                    right: 8px;
+                    width: $original-width - 10px;
+                    height: 18px;
+                    border-top: 1px solid darken($hair-color, 1%);
+                    border-radius: 40% 60% 0 0;
+                    @include box-shadow(0px -4px 4px -5px rgba(255,255,255,0.5));
+                }
+            }
+
+            $side-hair-height: 23px;
+            $side-hair-top-position: 10px;
+
+            &:before, &:after {
+                bottom: -($side-hair-height - $side-hair-top-position);
+                width: $side-hair-width;
+                background: $hair-color;
+            }
+
+            &:before /* side-left */{
+                left: 0px;
+                height: $side-hair-height;
+                border-radius: 10% 70% 40% 60% / 10% 20% 80% 70%;
+                @include box-shadow(/*inset 9px 2px 10px -8px rgba(255,255,255,0.6),*/
+                            2px 0 2px -2px rgba(0,0,0,0.5),
+                            inset -12px -5px 8px -10px rgba(0,0,0,0.8));
+            }
+
+            &:after /* side-right */ {
+                height: $side-hair-height + ($side-hair-top-position / 2) + 5px;
+                right: -4px;
+                border-radius: 60% 40% 60% 40% / 50% 40% 60% 50%;
+                @include box-shadow(-2px 0 2px -2px rgba(0,0,0,0.5),
+                            inset 12px -10px 15px -10px rgba(0,0,0,0.8));
+            }
+        }
+
+        .eye {
+            top: 34px;
+            height: 7px;
+            width: 7px;
+            background: #333333;
+            border-radius: 50%;
+            @include pair(18px);
+            z-index: 2;
+        }
+
+        .mouth {
+            $mouth-width: 26px;
+
+            height: 15px;
+            width: $mouth-width;
+            left: calc(50% - (#{$mouth-width} / 2));
+            top: 33px;
+            @include border-radius(50%);
+            @include box-shadow(0 10px 0 0px #333333);
+
+            .inner {
+                width: 98%;
+                height: 100%;
+                left: 1%;
+                top: 2px;
+                @include border-radius(50%);
+                @include box-shadow(0 8px 0 -2px #FFFFFF);
+
+                &:before, &:after {
+                    bottom: -3px;
+                    height: 0;
+                    width: 0;
+                    border: 1px solid transparent;
+                }
+
+                $teeth-rotate: 8deg;
+                @include pair-content(1px);
+
+                &:before {
+                    border-left-color: #333333;
+                    border-left-width: 8px;
+                    @include rotate($teeth-rotate);
+                }
+
+                &:after {
+                    border-right-color: #333333;
+                    border-right-width: 8px;
+                    @include rotate(-$teeth-rotate);
+                }
+            }
+        }
+    }
+
+    .neck {
+        $neck-width: $head-width / 1.8;
+
+        top: -$neck-height;
+        left: calc(50% - (#{$neck-width} / 2));
+        height: $neck-height;
+        width: $neck-width;
+        z-index: -2;
+        background-color: $skin-color;
+        @include background-image(linear-gradient(left,
+                    rgba(255,205,56,1) 0%,
+                    rgba(255,205,56,1) 30%,
+                    rgba(229,190,50,1) 50%,
+                    rgba(255,205,56,1) 70%,
+                    rgba(255,205,56,1) 100%));
+    }
+
+    .body {
+        $body-angle: $emmet-width / 6;
+
+        top: 0;
+        left: calc(50% - ((#{$emmet-width} + 24px) / 2));
+        height: 0;
+        width: $emmet-width;
+        border-style: solid;
+        border-width: 0 $body-angle $emmet-height $body-angle;
+        border-color: transparent transparent $suit-color transparent;
+        @include box-shadow( 0 3px 2px -2px rgba(0,0,0,0.5) );
+        z-index: 4;
+
+        .highlight {
+            bottom: -$emmet-height;
+            width: 60%;
+            height: $emmet-height;
+            border-radius: 20px;
+            @include filter-gradient(#f4e097, #FFFFFF, horizontal);
+            @include background-image(radial-gradient(30% 30%, ellipse cover,
+                        rgba(250,250,250,0.5) 0%,
+                        rgba(250,250,250,0) 60%));
+            filter: blur(5px);
+            z-index: 12;
+        }
+
+        &:before, &:after {
+            top: 22px;
+            height: 40px;
+            width: 18px;
+            border-top: 3px solid #000000;
+            z-index: 4;
+        }
+
+        @include pair-content(18px);
+
+        &:before {
+            border-right: 2px solid #000000;
+            @include transform(skewY(65deg));
+        }
+
+        &:after {
+            border-left: 2px solid #000000;
+            @include transform(skewY(-65deg));
+        }
+
+        .shirt {
+            $shirt-width: 38px;
+
+            top: 2px;
+            left: calc(50% - (#{$shirt-width} / 2));
+            height: 30px;
+            width: $shirt-width;
+            z-index: 3;
+            background: #FFFFFF;
+            -webkit-clip-path: polygon(50% 95%, 15% 0, 85% 0);
+            clip-path: polygon(50% 95%, 15% 0, 85% 0);
+
+            &:before, &:after {
+                top: 0;
+                height: 40px;
+                width: 20px;
+                background: $shirt-color;
+                border: 1px solid #000000;
+                z-index: 1;
+            }
+
+            @include pair-content(0);
+
+            &:before {
+                @include border-radius( 1% 90% 1% 20% / 1% 70% 1% 20% );
+            }
+
+            &:after {
+                @include border-radius( 90% 1% 20% 1% / 70% 1% 20% 1% );
+            }
+
+            .collar {
+                top: -3px;
+                height: 20px;
+                width: 20px;
+                z-index: 2;
+                @include pair(-10px, 45deg);
+
+                &.left {
+                    border-right: 1px solid #000000;
+                }
+
+                &.right {
+                    border-left: 1px solid #000000;
+                }
+            }
+        }
+
+        span /* reflectors */ {
+            top: 2px;
+            height: $emmet-height - 4px;
+            width: 10px;
+            background: $uv-color;
+            z-index: 2;
+
+            &:nth-of-type(1) {
+                left: 4px;
+            }
+
+            &:nth-of-type(2) {
+                right: 4px;
+            }
+
+            &:nth-of-type(3) {
+                top: -7px;
+                left: 32px;
+                height: 78px;
+            }
+
+            &:nth-of-type(4) {
+                top: 34px;
+                left: 32px;
+                height: 89px;
+            }
+
+            &:nth-of-type(3), &:nth-of-type(4) {
+                @include transform(rotate(90deg));
+            }
+        }
+
+        .pen {
+            top: 48px;
+            left: 6px;
+            height: 10px;
+            width: 6px;
+            background: #006FAD;
+            @include border-radius(5px 5px 0 0);
+            z-index: 10;
+            border: 2px solid #000000;
+
+            &:before {
+                top: -6px;
+                left: calc(50% - 2px);
+                height: 4px;
+                width: 4px;
+                background: #006FAD;
+            }
+
+            &:after {
+                top: 4px;
+                left: calc(50% - 1px);
+                height: 15px;
+                width: 2px;
+                background: #000000;
+            }
+        }
+
+        .pocket {
+            top: 60px;
+            width: 25px;
+            height: 6px;
+            border: 2px solid #000000;
+            z-index: 5;
+            border-radius: 2px 2px 0 0;
+            @include pair(-5px);
+        }
+    }
+
+    $arm-width: 24px;
+
+    .shoulder {
+        z-index: 2;
+        top: 5px;
+        width: $arm-width;
+        height: 54px;
+        background: $shirt-color;
+        @include pair(-($arm-width - 2px), 25deg);
+        overflow: hidden;
+
+        &.left {
+            @include border-radius(50px 50px 0 20px);
+            @include box-shadow(inset -15px 0 10px -5px rgba(0,0,0,0.3));
+
+            &:before {
+                top: 0;
+                width: 60%;
+                height: $emmet-height;
+                border-radius: 20px;
+                @include filter-gradient(#f4e097, #FFFFFF, horizontal);
+                @include background-image(
+                            radial-gradient(30% 30%, ellipse cover,
+                            rgba(250,250,250,0.3) 0%,
+                            rgba(250,250,250,0) 60%));
+                filter: blur(5px);
+                z-index: 12;
+            }
+        }
+
+        &.right {
+            @include border-radius(50px 50px 20px 0);
+            @include box-shadow(inset 18px 0 15px -5px rgba(0,0,0,0.5));
+        }
+    }
+
+    $lower-arm-height: 35px;
+    $wrist-width: 15px;
+    $wrist-height: 10px;
+
+    .arm {
+        bottom: -1px;
+        width: $arm-width + 1px;
+        height: $lower-arm-height;
+        background: $shirt-color;
+        z-index: 1;
+        @include border-radius(15% 15% 50% 50% / 15% 15% 20% 20%);
+        @include pair(-35px, 8deg);
+
+        &.left {
+            @include box-shadow(inset -15px 0 10px -5px rgba(0,0,0,0.3),
+                 inset 0 -10px 0 -5px darken($shirt-color, 15%));
+            overflow: hidden;
+
+            &:before {
+                top: 0;
+                width: 60%;
+                height: $lower-arm-height - 2px;
+                border-radius: 20px;
+                @include filter-gradient(#f4e097, #FFFFFF, horizontal);
+                @include background-image(
+                    radial-gradient(30% 30%, ellipse cover,
+                    rgba(250,250,250,0.2) 0%,
+                    rgba(250,250,250,0) 60%));
+                filter: blur(5px);
+                z-index: 12;
+            }
+        }
+
+        &.right {
+            @include box-shadow(inset 18px 0 15px -5px rgba(0,0,0,0.5),
+                 inset 0 -10px 0 -5px darken($shirt-color, 15%));
+        }
+    }
+
+    $hand-size: 12px;
+    $hand-depth: 6px;
+
+    .hand {
+        bottom: -($hand-size + $wrist-height + $hand-depth - 6px);
+        height: $hand-size;
+        width: $hand-size;
+        border: $hand-depth solid $skin-color;
+        border-bottom-color: transparent;
+        @include border-radius(50%);
+        @include box-shadow(4px 0px 0 -1px darken($skin-color, 15%),
+            inset 4px 3px 0 -1px darken($skin-color, 15%) );
+        z-index: 3;
+        @include pair(-38px, 5deg);
+
+        @include pair(calc(50% - (#{$wrist-width} / 2)), null, wrist);
+        @include pair(calc(50% - (#{$arm-width} / 2)), null, "wrist:before");
+
+        .wrist {
+            top: -$wrist-height;
+            height: $wrist-height;
+            width: $wrist-width;
+            background: $skin-color;
+            @include border-radius( 50% 50% 0 0 / 30% 30% 0 0 );
+            @include box-shadow(3px 0 0 -2px darken($skin-color, 20%));
+
+            &:before {
+                top: -5px;
+                width: $arm-width;
+                height: 10px;
+                border-top: 5px solid darken($shirt-color, 20%);
+                border-radius: 50%;
+            }
+        }
+
+        &:after /*fingers*/ {
+            bottom: -4px;
+            left: -3px;
+            height: $hand-depth;
+            width: $hand-depth;
+            background: $skin-color;
+            @include border-radius(50%);
+            @include box-shadow(12px 0 0 0 $skin-color);
+        }
+    }
+
+    $belt-height: 13px;
+    $belt-width: $emmet-width + 16px;
+    $border-tb-width: 2px;
+    $border-lr-width: 4px;
+
+    .belt {
+        bottom: -$belt-height;
+        left: calc(50% - (#{$belt-width} / 2));
+        width: $belt-width - ($border-lr-width * 2);
+        height: $belt-height - ($border-tb-width * 2);
+        background: #000000;
+        border: $border-tb-width solid $suit-color;
+        border-left-width: $border-lr-width;
+        border-right-width: $border-lr-width;
+        z-index: 4;
+
+        $belt-pattern-height: $belt-height - 4px;
+
+        &:before, &:after {
+            top: 0;
+            height: $belt-pattern-height;
+            width: 4px;
+            background: $suit-color;
+        }
+
+        @include pair-content(5px);
+
+        &:before {
+            @include box-shadow( 15px 0 0 0 $suit-color );
+        }
+
+        &:after {
+            @include box-shadow( -15px 0 0 0 $suit-color );
+        }
+
+        .buckle {
+            height: $belt-pattern-height;
+            width: 20px;
+            left: calc(50% - 10px);
+            background: $uv-color;
+
+            $buckle-size: 5px;
+            $buckle-border: 2px;
+
+            &:before {
+                top: calc(50% - ((#{$buckle-size} / 2) + #{$buckle-border}));
+                left: calc(50% - (#{$buckle-size} / 2));
+                height: $buckle-size;
+                width: $buckle-size;
+                border-top: $buckle-border solid #000000;
+                border-bottom: $buckle-border solid #000000;
+                @include border-radius(50%);
+                @include transform(rotate(-45deg));
+            }
+        }
+    }
+
+    $pelvis-height: 36px;
+    $pelvis-width: $belt-width;
+    $leg-height: 52px;
+
+    .pelvis {
+        bottom: -($pelvis-height + $belt-height);
+        left: calc(50% - (#{$pelvis-width} / 2));
+        width: $pelvis-width;
+        height: $pelvis-height;
+        background: $suit-color;
+        @include box-shadow( inset 0 18px 8px -15px rgba(0,0,0,0.7),
+                    inset 0 -20px 10px -10px rgba(0,0,0,0.3));
+        border-bottom: 1px solid #AB3602;
+
+        // .highlight {
+        //  top: 0;
+        //  left: 0;
+        //  width: 100%;
+        //  height: $pelvis-height;
+        //  @include filter-gradient(#ffffff, #ffffff, vertical);
+        //  @include background-image(linear-gradient(top,  rgba(255,255,255,0) 20%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0) 70%));
+
+        //  filter: blur(5px);
+        //  z-index: 12;
+        // }
+
+        $leg-spacing: 6px;
+
+        &:before /* crotch */ {
+            left: calc(50% - (#{$leg-spacing} / 2) - 1px);
+            width: $leg-spacing;
+            height: calc(100% - 2px);
+            border: 1px solid #AB3602;
+            border-top: 0;
+            @include box-shadow(inset 0 -5px 5px 0 rgba(0,0,0,0.2));
+        }
+
+        $leg-width: ($pelvis-width - $leg-spacing) / 2;
+        $tag-width: $leg-width - 8px;
+
+        .tag {
+            top: 9px;
+            right: 4px;
+            width: $tag-width;
+            height: 26px;
+            background: #000000;
+            @include border-radius(4px);
+            z-index: 2;
+
+            &:before {
+                top: -8px;
+                left: calc(50% - 14%);
+                width: 28%;
+                height: 8px;
+                background: #000000;
+            }
+
+            &:after {
+                top: -10px;
+                left: calc(50% - 7%);
+                width: 14%;
+                height: 8px;
+                background: #666666;
+            }
+
+            .id {
+                left: 2px;
+                bottom: 2px;
+                height: 16px;
+                width: $tag-width - 4px;
+                background: #999999;
+                @include border-radius(2px);
+
+                &:before {
+                    top: 2px;
+                    left: 2px;
+                    height: 10px;
+                    width: 10px;
+                    background: #000000;
+                }
+
+                &:after {
+                    top: 2px;
+                    right: 2px;
+                    height: 2px;
+                    width: 15px;
+                    background: #000000;
+                    @include box-shadow(0 3px 0 0 #000000, 0 6px 0 0 #000000);
+                }
+            }
+        }
+
+        .leg {
+
+            bottom: -($leg-height + 1px);
+            width: $leg-width;
+            height: $leg-height;
+            background: $suit-color;
+            @include box-shadow( inset 0 10px 10px -10px rgba(0,0,0,0.5));
+            @include pair(0);
+
+            &:before /* Knees */ {
+                top: 8px;
+                left: 3px;
+                width: $leg-width - 6px;
+                height: 12px;
+                background: $uv-color;
+            }
+
+            .foot {
+                bottom: 0;
+                height: 15px;
+                width: 100%;
+                @include box-shadow( 0 -4px 8px -2px rgba(255,255,255,0.6));
+            }
+        }
+    }
+
+    $shadow-width: 100px;
+
+    .shadow {
+        bottom: -101px;
+        left: -20px;
+        width: 220px;
+        height: 60px;
+        z-index: -1;
+        background: radial-gradient(circle at 50% 80%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0) 45%);
+        @include transform(skewX(-60deg));
+    }
+}
+
+.logo {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 20;
+
+    img {
+        margin: 0 0 5px -2px;
+        width: 200px;
+        height: auto;
+    }
+
+    h1, h2 {
+        font-family: "helvetica neue", helvetica, arial, sans-serif;
+        margin: 0;
+        font-size: 26px;
+        letter-spacing: 1px;
+        color: #FFFFFF;
+        font-weight: 100;
+    }
+}
