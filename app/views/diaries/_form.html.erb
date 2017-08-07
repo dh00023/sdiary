@@ -1,3 +1,5 @@
+<%= render "lego" %>
+
 <%= form_for(@diary) do |f| %>
   <% if @diary.errors.any? %>
     <div id="error_explanation">
@@ -12,8 +14,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.label :성감대부분%></br>
+    <label><%= f.radio_button :category,'head'%><span> 얼굴 </span></label>
+    <label><%= f.radio_button :category,'hair'%><span> 머리카락 </span></label>
+    <label><%= f.radio_button :category,'waist'%><span> 허리 </span></label>
+    <label><%= f.radio_button :category,'shoulder_left'%><span> 왼쪽팔뚝 </span></label>
+    <label><%= f.radio_button :category,'shoulder_right'%><span> 오른쪽팔뚝 </span></label>
+    <label><%= f.radio_button :category,'arm_left'%><span> 왼쪽팔 </span></label>
+    <label><%= f.radio_button :category,'arm_right'%><span> 오른쪽팔 </span></label>
+    <label><%= f.radio_button :category,'hand_left'%><span> 왼손 </span></label>
+    <label><%= f.radio_button :category,'hand_right'%><span> 오른손 </span></label>
+    <label><%= f.radio_button :category,'leg_right'%><span> 오른쪽다리 </span></label>
+    <label><%= f.radio_button :category,'leg_left'%><span> 왼쪽다리 </span></label>
+    <label><%= f.radio_button :category,'foot_left'%><span> 왼발 </span></label>
+    <label><%= f.radio_button :category,'foot_right'%><span> 오른발 </span></label>
+    <label><%= f.radio_button :category,'wrist_left'%><span> 왼손목 </span></label>
+    <label><%= f.radio_button :category,'wrist_right'%><span> 오른손목 </span></label>
+    <label><%= f.radio_button :category,'hip'%><span> 엉덩이 </span></label>
+    <label><%= f.radio_button :category,'body'%><span> 몸 </span></label>
+    <label><%= f.radio_button :category,'back'%><span> 등 </span></label>
+    <label><%= f.radio_button :category,'core'%><span> 중요부위 </span></label>
   </div>
   <div class="field">
     <%= f.label :memo %><br>

@@ -10,3 +10,86 @@
 <% end %>
 
 <%= render "lego" %>
+<% @diaries.each do |diary| %>
+  <tr>
+    <td><%= diary.category %></td>
+    <td><%= diary.memo %></td>
+    <td><%= link_to 'Show', diary %></td>
+    <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
+    <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+<%= link_to 'New Diary', new_diary_path %>
+
+<script>
+<% @diaries.each do |diary| %>
+  <% if diary.category == "head" %>
+    $(".head").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "hair" %>
+    $(".hair").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "wrist" %>
+    $(".wrist").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "shoulder_left" %>
+    $("shoulder_left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "shoulder_right" %>
+    $("shoulder_right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "hand_left" %>
+    $(".hand_left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "hand_right" %>
+    $(".hand_right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "leg_right" %>
+    $(".leg_right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "leg_left" %>
+    $(".leg_left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "arm_left" %>
+    $(".arm_left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "arm_right" %>
+    $(".arm_right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "foot_left" %>
+    $(".foot_left").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "foot_right" %>
+    $(".foot_right").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "core" %>
+    $(".core").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "hip" %>
+    $(".hip").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "body" %>
+    $(".body").css("background-color","red");
+  <% end %>
+
+  <% if diary.category == "back" %>
+    $(".back").css("background-color","red");
+  <% end %>
+<% end %>
+</script>
+</script>
