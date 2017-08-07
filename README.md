@@ -7,8 +7,13 @@
 
 ## 모델
 - User : Omniauth Facebook
-- Diary(주모델,컨트롤러) : category(라디오 버튼으로! 머리(head),머리카락(hair), 허리(waist), 팔(shoulder_left,arm_left,shoulder_right,arm_right), 다리(leg_left, leg_right)(2), 발(foot) 손(hand_left,wrist_left,hand_right,wrist_right), 중요부위(core), 엉덩이(hip), 몸(body), 등(back) - 18개], memo 
+
+- Diary(주모델,컨트롤러) : category(라디오 버튼으로! 머리(head),머리카락(hair), 허리(wrist), 팔(shoulder_left,arm_left,shoulder_right,arm_right), 다리(leg_left, leg_right)(2), 발(foot) 손(hand_left,wrist_left,hand_right,wrist_right), 중요부위(core), 엉덩이(hip), 몸(body), 등(back) - 18개], memo 
 - Post(다른사람과 공유)
+
+- Diary(주모델,컨트롤러) : category(라디오 버튼으로! 머리(head),머리카락(hair), 허리(waist), 팔(shoulder_left,arm_left,shoulder_right,arm_right), 다리(leg_left, leg_right)(2), 발(foot) 손(hand_left,wrist_left,hand_right,wrist_right), 중요부위(core), 엉덩이(hip), 몸(body), 등(back) - 18개], memo 
+- Post(다른사람과 공유) : title content
+c
 - Comment(다른사람과 공유)
 
 ### 관계
@@ -33,9 +38,14 @@ Post - Comment : 1 대 N 관계
 - devise
 - omniauth-facebook
 - chartkick
+- gem 'compass-rails' # 이미지 불러올 때 필요한 젬
 
 ## 역할분배
 - 이미지(성감대 선택) : 선홍, 다혜, 지연
 - 로그인 : 명상, 지훈
 - 게시판 : 현경, 승하
 - 차트 : 다혜
+
+## 김선홍
+- diaries.scss lego코드 추가
+- index.html.erb lego코드 추가, script 코드 추가
