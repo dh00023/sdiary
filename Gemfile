@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
+
 # 레고 이미지 보이게 하기
 gem 'sass-rails', '~> 5.0'
 gem 'compass'
 gem 'compass-rails'
+
+gem 'devise'
+gem 'omniauth-facebook'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -47,6 +51,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
 end
 
 
