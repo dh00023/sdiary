@@ -5,14 +5,15 @@ body {
 //  background-color: rgb(44,76,121);
 @include filter-gradient(#2c4c79, #8dbbea, vertical);
 // @include background-image(linear-gradient(top,  rgba(44,76,121,1) 0%,rgba(141,187,234,1) 100%));
-    display: inline;
+
 
     .container {
+        // position:relative;
         max-width: 300px;
         padding: 0;
         margin: 0 auto;
         min-height: 600px;
-
+        display:inline
         // :before, :after {
         //     position: absolute;
         //     content: "";
@@ -21,6 +22,8 @@ body {
         // }
     }
 }
+
+//containerbox 추가
 
 @mixin pair($position, $rotate: null, $child: null) {
     @if $child != null {
@@ -57,6 +60,7 @@ body {
     &:after { right: $position; }
 }
 
+
 $emmet-width: 75px;
 $emmet-height: 85px;
 
@@ -71,7 +75,7 @@ $neck-height: 7px;
 $hair-height: 40px;
 
 .emmet-container {
-    position: absolute;
+    // position: relative;
     height: 250px;
     width: $emmet-width;
     top: calc(50% - (250px / 2));
@@ -279,169 +283,20 @@ $hair-height: 40px;
                     rgba(255,205,56,1) 100%));
     }
 
-    .body {
-        $body-angle: $emmet-width / 6;
+    // .body {
+    //     $body-angle: $emmet-width / 6;
 
-        top: 0;
-        left: calc(50% - ((#{$emmet-width} + 24px) / 2));
-        height: 0;
-        width: $emmet-width;
-        border-style: solid;
-        border-width: 0 $body-angle $emmet-height $body-angle;
-        border-color: transparent transparent $suit-color transparent;
-        // @include box-shadow( 0 3px 2px -2px rgba(0,0,0,0.5) );
-        z-index: 4;
+    //     top: 0;
+    //     left: calc(50% - ((#{$emmet-width} + 24px) / 2));
+    //     height: 0;
+    //     width: $emmet-width;
+    //     border-style: solid;
+    //     border-width: 0 $body-angle $emmet-height $body-angle;
+    //     border-color: transparent transparent $suit-color transparent;
+    //     // @include box-shadow( 0 3px 2px -2px rgba(0,0,0,0.5) );
+    //     z-index: 4;
 
-        .highlight {
-            bottom: -$emmet-height;
-            width: 60%;
-            height: $emmet-height;
-            border-radius: 20px;
-            @include filter-gradient(#f4e097, #FFFFFF, horizontal);
-            @include background-image(radial-gradient(30% 30%, ellipse cover,
-                        rgba(250,250,250,0.5) 0%,
-                        rgba(250,250,250,0) 60%));
-            filter: blur(5px);
-            z-index: 12;
-        }
-
-        &:before, &:after {
-            top: 22px;
-            height: 40px;
-            width: 18px;
-            border-top: 3px solid #000000;
-            z-index: 4;
-        }
-
-        @include pair-content(18px);
-
-        &:before {
-            border-right: 2px solid #000000;
-            @include transform(skewY(65deg));
-        }
-
-        &:after {
-            border-left: 2px solid #000000;
-            @include transform(skewY(-65deg));
-        }
-
-        .shirt {
-            $shirt-width: 38px;
-
-            top: 2px;
-            left: calc(50% - (#{$shirt-width} / 2));
-            height: 30px;
-            width: $shirt-width;
-            z-index: 3;
-            background: #FFFFFF;
-            -webkit-clip-path: polygon(50% 95%, 15% 0, 85% 0);
-            clip-path: polygon(50% 95%, 15% 0, 85% 0);
-
-            &:before, &:after {
-                top: 0;
-                height: 40px;
-                width: 20px;
-                background: $shirt-color;
-                border: 1px solid #000000;
-                z-index: 1;
-            }
-
-            @include pair-content(0);
-
-            &:before {
-                @include border-radius( 1% 90% 1% 20% / 1% 70% 1% 20% );
-            }
-
-            &:after {
-                @include border-radius( 90% 1% 20% 1% / 70% 1% 20% 1% );
-            }
-
-            .collar {
-                top: -3px;
-                height: 20px;
-                width: 20px;
-                z-index: 2;
-                @include pair(-10px, 45deg);
-
-                &.left {
-                    border-right: 1px solid #000000;
-                }
-
-                &.right {
-                    border-left: 1px solid #000000;
-                }
-            }
-        }
-
-        span /* reflectors */ {
-            top: 2px;
-            height: $emmet-height - 4px;
-            width: 10px;
-            background: $uv-color;
-            z-index: 2;
-
-            &:nth-of-type(1) {
-                left: 4px;
-            }
-
-            &:nth-of-type(2) {
-                right: 4px;
-            }
-
-            &:nth-of-type(3) {
-                top: -7px;
-                left: 32px;
-                height: 78px;
-            }
-
-            &:nth-of-type(4) {
-                top: 34px;
-                left: 32px;
-                height: 89px;
-            }
-
-            &:nth-of-type(3), &:nth-of-type(4) {
-                @include transform(rotate(90deg));
-            }
-        }
-
-        .pen {
-            top: 48px;
-            left: 6px;
-            height: 10px;
-            width: 6px;
-            background: #006FAD;
-            @include border-radius(5px 5px 0 0);
-            z-index: 10;
-            border: 2px solid #000000;
-
-            &:before {
-                top: -6px;
-                left: calc(50% - 2px);
-                height: 4px;
-                width: 4px;
-                background: #006FAD;
-            }
-
-            &:after {
-                top: 4px;
-                left: calc(50% - 1px);
-                height: 15px;
-                width: 2px;
-                background: #000000;
-            }
-        }
-
-        .pocket {
-            top: 60px;
-            width: 25px;
-            height: 6px;
-            border: 2px solid #000000;
-            z-index: 5;
-            border-radius: 2px 2px 0 0;
-            @include pair(-5px);
-        }
-    }
+    // }
 
     $arm-width: 24px;
 
@@ -774,3 +629,37 @@ $hair-height: 40px;
         font-weight: 100;
     }
 }
+
+
+// 등
+
+.body2 {
+        $body-angle: $emmet-width / 6;
+
+        top: 0;
+        left: calc(50% - ((#{$emmet-width} + 24px) / 2));
+        height: 0;
+        width: $emmet-width;
+        border-style: solid;
+        border-width: 0 $body-angle $emmet-height $body-angle;
+        border-color: transparent transparent $suit-color transparent;
+        // @include box-shadow( 0 3px 2px -2px rgba(0,0,0,0.5) );
+        z-index: 4;
+
+    }
+
+.body3 {
+        $body-angle: $emmet-width / 6;
+
+        top: 0;
+        left: calc(50% - ((#{$emmet-width} + 24px) / 2));
+        height: 0;
+        width: $emmet-width;
+        border-style: solid;
+        border-width: 0 $body-angle $emmet-height $body-angle;
+        border-color: transparent transparent $suit-color transparent;
+        // @include box-shadow( 0 3px 2px -2px rgba(0,0,0,0.5) );
+        z-index: 4;
+
+    }
+

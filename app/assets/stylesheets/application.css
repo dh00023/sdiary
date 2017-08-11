@@ -14,3 +14,8 @@
  *= require_self
  */
 
+.containerbox{
+    display:flex;
+    justify-content: flex;
+    margin-top:50px;
+}
