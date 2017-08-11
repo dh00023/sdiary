@@ -46,4 +46,7 @@ Post - Comment : 1 대 N 관계
 - diaries.scss lego코드 추가
 - index.html.erb lego코드 추가, script 코드 추가
 - edit,new 수정
-- 전체를 감싸는 .containerbox를 추가한 뒤, application.css에서 display: flex를 먹여줌 (position:absolute를 주석처리함) -> 등만 따로 빼서 살림
+- 전체를 감싸는 .containerbox를 추가한 뒤, application.css-> display: flex  
+(position:absolute를 주석처리함) -> 등만 따로 빼서 추가 
+- 엉덩이추가 - hip class 생성 
+- 중요부위 제외 성공(css중복으로 인해 처리못함)

@@ -6,8 +6,9 @@
 
 <script type="text/javascript">
     function reset(){
-        $(".head, .arm, .hand, .leg, .foot, .wrist, .hip, .back, .core, .belt, .body, .shoulder").css("background-color", "#FFE4C4")
+        $(".head, .arm, .hand, .leg, .foot, .wrist, .hip, .back, .core, .belt, .shoulder").css("background-color", "#FFE4C4")
         $(".hair").css("background-color", "black");
+        $(".body2, .body3").css("border-color", "transparent transparent #FFE4C4 transparent");
     }
 
     $("#diary_category_head").click(function(){
@@ -74,16 +75,13 @@
 
     $("#diary_category_body").click(function(){
         reset();
-        $(".emmet .body").css("border-color", "transparent transparent red transparent");
-        // $('div.hair').append('<style type="text/css"> .emmet .body{border-color:transparent transparent red transparent;} </style>');
+        $(".body2").css("border-color", "transparent transparent red transparent");
     });
-
-
-
 
     $("#diary_category_back").click(function(){
         reset();
-        $(".back").css("background-color", "red");
+        $(".body3").css("border-color", "transparent transparent red transparent");
+        // $('div.hair').append('<style type="text/css"> .emmet .body{border-color:transparent transparent red transparent;} </style>');
     });
 
     $("#diary_category_core").click(function(){
