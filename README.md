@@ -45,3 +45,4 @@ Post - Comment : 1 대 N 관계
 ## 김선홍
 - diaries.scss lego코드 추가
 - index.html.erb lego코드 추가, script 코드 추가
+- edit,new 수정 (이제 등 만들면 됌)

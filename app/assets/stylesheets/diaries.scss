@@ -13,12 +13,12 @@ body {
         margin: 0 auto;
         min-height: 600px;
 
-        :before, :after {
-            position: absolute;
-            content: "";
-            width: 0;
-            height: 0;
-        }
+        // :before, :after {
+        //     position: absolute;
+        //     content: "";
+        //     width: 0;
+        //     height: 0;
+        // }
     }
 }
 
@@ -91,14 +91,14 @@ $hair-height: 40px;
     $head-width: $head-height - 4px;
 
     .head {
-        top: -($head-height + $neck-height - 1px);
+        top: -($head-height );
         left: calc(50% - (#{$head-width} / 2));
         width: $head-width;
         height: $head-height;
         background-color: $skin-color;
-        @include box-shadow(0px 16px 10px -18px rgba(0,0,0,0.5),
-                    inset 0px -16px 5px -15px rgba(0,0,0,0.2),
-                    inset -18px 0px 15px -15px rgba(0,0,0,0.5));
+        // @include box-shadow(0px 16px 10px -18px rgba(0,0,0,0.5),
+        //             inset 0px -16px 5px -15px rgba(0,0,0,0.2),
+        //             inset -18px 0px 15px -15px rgba(0,0,0,0.5));
         @include border-radius(25%);
 
         &:before {
@@ -184,11 +184,12 @@ $hair-height: 40px;
             $side-hair-height: 23px;
             $side-hair-top-position: 10px;
 
-            &:before, &:after {
-                bottom: -($side-hair-height - $side-hair-top-position);
-                width: $side-hair-width;
-                background: $hair-color;
-            }
+            //선홍: 귀가 색이 안입혀져서 짤랐어요
+            // &:before, &:after{
+            //     bottom: -($side-hair-height - $side-hair-top-position);
+            //     width: $side-hair-width;
+            //     background: $hair-color;
+            // }
 
             &:before /* side-left */{
                 left: 0px;
@@ -288,7 +289,7 @@ $hair-height: 40px;
         border-style: solid;
         border-width: 0 $body-angle $emmet-height $body-angle;
         border-color: transparent transparent $suit-color transparent;
-        @include box-shadow( 0 3px 2px -2px rgba(0,0,0,0.5) );
+        // @include box-shadow( 0 3px 2px -2px rgba(0,0,0,0.5) );
         z-index: 4;
 
         .highlight {
@@ -455,7 +456,7 @@ $hair-height: 40px;
 
         &.left {
             @include border-radius(50px 50px 0 20px);
-            @include box-shadow(inset -15px 0 10px -5px rgba(0,0,0,0.3));
+            // @include box-shadow(inset -15px 0 10px -5px rgba(0,0,0,0.3));
 
             &:before {
                 top: 0;
@@ -474,7 +475,7 @@ $hair-height: 40px;
 
         &.right {
             @include border-radius(50px 50px 20px 0);
-            @include box-shadow(inset 18px 0 15px -5px rgba(0,0,0,0.5));
+            // @include box-shadow(inset 18px 0 15px -5px rgba(0,0,0,0.5));
         }
     }
 
@@ -492,9 +493,9 @@ $hair-height: 40px;
         @include pair(-35px, 8deg);
 
         &.left {
-            @include box-shadow(inset -15px 0 10px -5px rgba(0,0,0,0.3),
-                 inset 0 -10px 0 -5px darken($shirt-color, 15%));
-            overflow: hidden;
+            // @include box-shadow(inset -15px 0 10px -5px rgba(0,0,0,0.3),
+            //      inset 0 -10px 0 -5px darken($shirt-color, 15%));
+            // overflow: hidden;
 
             &:before {
                 top: 0;
@@ -512,8 +513,8 @@ $hair-height: 40px;
         }
 
         &.right {
-            @include box-shadow(inset 18px 0 15px -5px rgba(0,0,0,0.5),
-                 inset 0 -10px 0 -5px darken($shirt-color, 15%));
+            // @include box-shadow(inset 18px 0 15px -5px rgba(0,0,0,0.5),
+            //      inset 0 -10px 0 -5px darken($shirt-color, 15%));
         }
     }
 
@@ -525,7 +526,7 @@ $hair-height: 40px;
         height: $hand-size;
         width: $hand-size;
         border: $hand-depth solid $skin-color;
-        border-bottom-color: transparent;
+        // border-bottom-color: transparent;
         @include border-radius(50%);
         @include box-shadow(4px 0px 0 -1px darken($skin-color, 15%),
             inset 4px 3px 0 -1px darken($skin-color, 15%) );
@@ -565,8 +566,8 @@ $hair-height: 40px;
 
     $belt-height: 13px;
     $belt-width: $emmet-width + 16px;
-    $border-tb-width: 2px;
-    $border-lr-width: 4px;
+    $border-tb-width: 0px;
+    $border-lr-width: 0px;
 
     .belt {
         bottom: -$belt-height;
@@ -583,7 +584,7 @@ $hair-height: 40px;
 
         &:before, &:after {
             top: 0;
-            height: $belt-pattern-height;
+            // height: $belt-pattern-height;
             width: 4px;
             background: $suit-color;
         }
@@ -630,9 +631,10 @@ $hair-height: 40px;
         width: $pelvis-width;
         height: $pelvis-height;
         background: $suit-color;
-        @include box-shadow( inset 0 18px 8px -15px rgba(0,0,0,0.7),
-                    inset 0 -20px 10px -10px rgba(0,0,0,0.3));
-        border-bottom: 1px solid #AB3602;
+
+        // @include box-shadow( inset 0 18px 8px -15px rgba(0,0,0,0.7),
+        //             inset 0 -20px 10px -10px rgba(0,0,0,0.3));
+        border-bottom: 1px solid #FFE4C4;
 
         // .highlight {
         //  top: 0;
@@ -652,9 +654,9 @@ $hair-height: 40px;
             left: calc(50% - (#{$leg-spacing} / 2) - 1px);
             width: $leg-spacing;
             height: calc(100% - 2px);
-            border: 1px solid #AB3602;
+            border: 1px solid #FFE4C4;
             border-top: 0;
-            @include box-shadow(inset 0 -5px 5px 0 rgba(0,0,0,0.2));
+            // @include box-shadow(inset 0 -5px 5px 0 rgba(0,0,0,0.2));
         }
 
         $leg-width: ($pelvis-width - $leg-spacing) / 2;
@@ -691,7 +693,7 @@ $hair-height: 40px;
                 height: 16px;
                 width: $tag-width - 4px;
                 background: #999999;
-                @include border-radius(2px);
+                @include border-radius();
 
                 &:before {
                     top: 2px;
@@ -707,7 +709,7 @@ $hair-height: 40px;
                     height: 2px;
                     width: 15px;
                     background: #000000;
-                    @include box-shadow(0 3px 0 0 #000000, 0 6px 0 0 #000000);
+                    // @include box-shadow(0 3px 0 0 #000000, 0 6px 0 0 #000000);
                 }
             }
         }
@@ -718,7 +720,7 @@ $hair-height: 40px;
             width: $leg-width;
             height: $leg-height;
             background: $suit-color;
-            @include box-shadow( inset 0 10px 10px -10px rgba(0,0,0,0.5));
+            // @include box-shadow( inset 0 10px 10px -10px rgba(0,0,0,0.5));
             @include pair(0);
 
             &:before /* Knees */ {
@@ -726,29 +728,29 @@ $hair-height: 40px;
                 left: 3px;
                 width: $leg-width - 6px;
                 height: 12px;
-                background: $uv-color;
+                // background: $uv-color;
             }
 
             .foot {
                 bottom: 0;
                 height: 15px;
                 width: 100%;
-                @include box-shadow( 0 -4px 8px -2px rgba(255,255,255,0.6));
+                // @include box-shadow( 0 -4px 8px -2px rgba(255,255,255,0.6));
             }
         }
     }
 
     $shadow-width: 100px;
 
-    .shadow {
-        bottom: -101px;
-        left: -20px;
-        width: 220px;
-        height: 60px;
-        z-index: -1;
-        background: radial-gradient(circle at 50% 80%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0) 45%);
-        @include transform(skewX(-60deg));
-    }
+    // .shadow {
+    //     bottom: -101px;
+    //     left: -20px;
+    //     width: 220px;
+    //     height: 60px;
+    //     z-index: -1;
+    //     background: radial-gradient(circle at 50% 80%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0) 45%);
+    //     @include transform(skewX(-60deg));
+    // }
 }
 
 .logo {

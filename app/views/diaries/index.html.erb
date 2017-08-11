@@ -30,7 +30,8 @@ $( document ).ready(function() {
   <% end %>
 
   <% if diary.category == "hair" %>
-    $(".hair").css("background-color","red");
+    $(".hair ").css("background-color","red");
+    // $('div.hair').append('<style type="text/css"> background-color:red </style>');
   <% end %>
 
   <% if diary.category == "wrist" %>

@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
     function reset(){
-        $(".head, .arm, .hand, .leg, .foot, .wrist, .hip, .body, .back, .core, .belt, .shoulder ").css("background-color", "#FFE4C4")
+        $(".head, .arm, .hand, .leg, .foot, .wrist, .hip, .back, .core, .belt, .body, .shoulder").css("background-color", "#FFE4C4")
         $(".hair").css("background-color", "black");
     }
 
@@ -27,9 +27,14 @@
         $(".arm.right").css("background-color", "red");
     });
 
-    $("#diary_category_hand").click(function(){
+    $("#diary_category_hand_left").click(function(){
         reset();
-        $(".hand").css("background-color", "red");
+        $(".hand.left").css("background-color", "red");
+    });
+
+    $("#diary_category_hand_right").click(function(){
+        reset();
+        $(".hand.right").css("background-color", "red");
     });
 
     $("#diary_category_leg_left").click(function(){
@@ -52,19 +57,27 @@
         $(".foot.right").css("background-color", "red");
     });
 
-    $("#diary_category_wrist").click(function(){
-        reset();
-        $(".wrist").css("background-color", "red");
-    });
+    // $("#diary_category_wrist_left").click(function(){
+    //     reset();
+    //     $(".wrist.left").css("background-color", "red");
+    // });
+
+    // $("#diary_category_wrist_right").click(function(){
+    //     reset();
+    //     $(".wrist.right").css("background-color", "red");
+    // });
 
     $("#diary_category_hip").click(function(){
         reset();
         $(".hip").css("background-color", "red");
     });
 
+    // var suit_color = $('.suit_color');
+
     $("#diary_category_body").click(function(){
         reset();
-        $(".body").css("background-color", "red");
+        $(".emmet .body").css("border-color", "transparent transparent red transparent");
+        // $('div.hair').append('<style type="text/css"> .emmet .body{border-color:transparent transparent red transparent;} </style>');
     });
 
     $("#diary_category_back").click(function(){
@@ -82,11 +95,20 @@
         $(".belt").css("background-color", "red");
     });
 
-    $("#diary_category_shoulder").click(function(){
+    $("#diary_category_shoulder_left").click(function(){
         reset();
-        $(".shoulder").css("background-color", "red");
+        $(".shoulder.left").css("background-color", "red");
+    });
+
+    $("#diary_category_shoulder_right").click(function(){
+        reset();
+        $(".shoulder.right").css("background-color", "red");
     });
 
 
+    $("#diary_category_hair").click(function(){
+        reset();
+        $(".hair").css("background-color", "red");
+    });
 
 </script>
