@@ -3,6 +3,10 @@
 
 <h1>Listing Posts</h1>
 
+<% Category.all.each do |category| %>
+  <%= link_to category.name, posts_path(category: category.name) %>
+<% end %>  
+
 <table>
   <thead>
     <tr>
@@ -23,7 +27,6 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-<%= paginate @posts %>
+</table><%= will_paginate @allpost, :previous_label => '이전', :next_label => '다음' %>
 <br>
 <%= link_to 'New Post', new_post_path %>

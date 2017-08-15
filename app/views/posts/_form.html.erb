@@ -17,6 +17,7 @@
   </div>
   
   <div class="field">
+    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "카테고리를 선택해주세요"} %>
     <p>
     <%= f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120 %>
     <%= tinymce %>
