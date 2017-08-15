@@ -1,24 +1,39 @@
-<p id="notice"><%= notice %></p>
-<% if user_signed_in? %>
-  <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
-  <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
-<% else %>
-  <p><%= link_to "로그인", new_user_session_path %></p>
-  <%= link_to "페이스북 로그인", user_facebook_omniauth_authorize_path %>
-<% end %>
-
-<% @diaries.each do |diary| %>
-  <tr>
-    <td><%= diary.category %></td>
-    <td><%= diary.memo %></td>
-    <td><%= link_to 'Show', diary %></td>
-    <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
-    <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-<%= link_to 'New Diary', new_diary_path %>
-
-<%= render "lego" %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="jumbotron">
+          <%= render "lego" %>
+          <%= link_to 'New Diary', new_diary_path %>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="form-group">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>성감대</th>
+              <th>Memo</th>
+              <th>link</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% @diaries.each do |diary| %>
+            <tr>
+              <td><%= diary.category %></td>
+              <td><%= diary.memo %></td>
+              <td><%= link_to 'Show', diary %></td>
+              <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
+              <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
