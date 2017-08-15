@@ -8,9 +8,10 @@
 
 <script type="text/javascript">
     function reset(){
-        $(".head, .arm, .hand, .leg, .foot, .wrist, .hip, .back, .core, .belt, .shoulder, .core").css("background-color", "#FFE4C4")
+        $(".head, .arm, .leg, .foot, .wrist, .hip, .back, .core, .belt, .shoulder, .core").css("background-color", "#FFE4C4")
         $(".hair").css("background-color", "black");
         $(".body2, .body3").css("border-color", "transparent transparent #FFE4C4 transparent");
+        $(".hand").css("border", "13px solid #FFE4C4");
     }
 
     $("#diary_category_head").click(function(){
@@ -30,12 +31,12 @@
 
     $("#diary_category_hand_left").click(function(){
         reset();
-        $(".hand.left").css("background-color", "red");
+        $(".hand.left").css("border", "13px solid red");
     });
 
     $("#diary_category_hand_right").click(function(){
         reset();
-        $(".hand.right").css("background-color", "red");
+        $(".hand.right").css("border", "13px solid red");
     });
 
     $("#diary_category_leg_left").click(function(){

@@ -4,27 +4,27 @@
 
 
 @import "compass";
+// *{
+// margin:0;
+// padding:0;
+// }
 
-body {
+.container1{
 //  background-color: rgb(44,76,121);
 @include filter-gradient(#2c4c79, #8dbbea, vertical);
 // @include background-image(linear-gradient(top,  rgba(44,76,121,1) 0%,rgba(141,187,234,1) 100%));
 
-
-    .container1 {
-        // position:relative;
-        max-width: 300px;
-        padding: 0;
-        margin: 0 auto;
-        min-height: 600px;
-        display:inline
-        // :before, :after {
-        //     position: absolute;
-        //     content: "";
-        //     width: 0;
-        //     height: 0;
-        // }
-    }
+// position:relative;
+max-width: 300px;
+padding: 0;
+margin: 0 auto;
+min-height: 600px;
+display:inline
+// :before, :after {
+//     position: absolute;
+//     content: "";
+//     width: 0;
+//     height: 0;
 }
 
 //containerbox 추가
@@ -308,7 +308,7 @@ $hair-height: 40px;
         bottom: -($hand-size + $wrist-height + $hand-depth - 6px);
         height: $hand-size;
         width: $hand-size;
-        border: $hand-depth solid $skin-color;
+        border: 13px solid $skin-color;
         // border-bottom-color: transparent;
         @include border-radius(50%);
         @include box-shadow(4px 0px 0 -1px darken($skin-color, 15%),
@@ -535,7 +535,8 @@ $hair-height: 40px;
         top: 0;
         left: calc(50% - ((#{$emmet-width} + 24px) / 2));
         height: 0;
-        width: $emmet-width;
+        // width: $emmet-width;
+        width: 100px;
         border-style: solid;
         border-width: 0 $body-angle $emmet-height $body-angle;
         border-color: transparent transparent $suit-color transparent;
@@ -550,7 +551,8 @@ $hair-height: 40px;
         top: 0;
         left: calc(50% - ((#{$emmet-width} + 24px) / 2));
         height: 0;
-        width: $emmet-width;
+        // width: $emmet-width;
+        width: 100px;
         border-style: solid;
         border-width: 0 $body-angle $emmet-height $body-angle;
         border-color: transparent transparent $suit-color transparent;
