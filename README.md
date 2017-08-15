@@ -49,4 +49,4 @@ Post - Comment : 1 대 N 관계
 - 전체를 감싸는 .containerbox를 추가한 뒤, application.css-> display: flex  
 (position:absolute를 주석처리함) -> 등만 따로 빼서 추가 
 - 엉덩이추가 - hip class 생성 
-- 중요부위 제외 성공(css중복으로 인해 처리못함)
+- 중요부위 - core class 생성 - 마무리
