@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
     function reset(){
-        $(".head, .arm, .hand, .leg, .foot, .wrist, .hip, .back, .core, .belt, .shoulder").css("background-color", "#FFE4C4")
+        $(".head, .arm, .hand, .leg, .foot, .wrist, .hip, .back, .core, .belt, .shoulder, .core").css("background-color", "#FFE4C4")
         $(".hair").css("background-color", "black");
         $(".body2, .body3").css("border-color", "transparent transparent #FFE4C4 transparent");
     }
@@ -66,7 +66,12 @@
     // $("#diary_category_wrist_right").click(function(){
     //     reset();
     //     $(".wrist.right").css("background-color", "red");
-    // });
+    //
+
+    $("#diary_category_core").click(function(){
+        reset();
+        $(".core").css("background-color", "red");
+    });
 
     $("#diary_category_hip").click(function(){
         reset();
