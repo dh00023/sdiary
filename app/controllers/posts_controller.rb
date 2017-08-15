@@ -3,8 +3,14 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+
   def index
-    @posts = Post.page params[:page]
+    if params[:category].blank?
+      @posts = Post.paginate(:page => params[:page], :per_page => 3)
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @posts = Post.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+    end
   end
 
   # GET /posts/1
@@ -69,6 +75,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :category_id)
     end
 end
