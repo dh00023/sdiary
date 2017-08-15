@@ -18,10 +18,11 @@
     <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
-
 <%= link_to 'New Diary', new_diary_path %>
 
 <%= render "lego" %>
+
+
 
 <script>
 $( document ).ready(function() {
@@ -31,7 +32,8 @@ $( document ).ready(function() {
   <% end %>
 
   <% if diary.category == "hair" %>
-    $(".hair").css("background-color","red");
+    $(".hair ").css("background-color","red");
+    // $('div.hair').append('<style type="text/css"> background-color:red </style>');
   <% end %>
 
   <% if diary.category == "wrist" %>
@@ -55,7 +57,7 @@ $( document ).ready(function() {
   <% end %>
 
   <% if diary.category == "leg_right" %>
-    $(".leg right").css("background-color","red");
+    $(".leg.right").css("background-color","red");
   <% end %>
 
   <% if diary.category == "leg_left" %>
