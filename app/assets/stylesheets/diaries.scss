@@ -1,6 +1,10 @@
 @import "compass";
 
 
+
+
+@import "compass";
+
 body {
 //  background-color: rgb(44,76,121);
 @include filter-gradient(#2c4c79, #8dbbea, vertical);
@@ -400,13 +404,99 @@ $hair-height: 40px;
             }
         }
     }
-
     $pelvis-height: 36px;
     $pelvis-width: $belt-width;
     $leg-height: 52px;
     $leg-spacing: 6px;
     $leg-width: ($pelvis-width - $leg-spacing) / 2;
 
+    .pelvis {
+        bottom: -($pelvis-height + $belt-height);
+        left: calc(50% - (#{$pelvis-width} / 2));
+        width: $pelvis-width;
+        height: $pelvis-height;
+        background: $suit-color;
+        // @include box-shadow( inset 0 18px 8px -15px rgba(0,0,0,0.7),
+        //             inset 0 -20px 10px -10px rgba(0,0,0,0.3));
+        border-bottom: 1px solid #FFE4C4;
+
+        .highlight {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: $pelvis-height;
+            // @include filter-gradient(#ffffff, #ffffff, vertical);
+            // @include background-image(linear-gradient(top,  rgba(255,255,255,0) 20%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0) 70%));
+
+            // filter: blur(5px);
+            z-index: 12;
+        }
+
+        $leg-spacing: 6px;
+
+        &:before /* crotch */ {
+            left: calc(50% - (#{$leg-spacing} / 2) - 1px);
+            width: $leg-spacing;
+            height: calc(100% - 2px);
+            border: 1px solid #AB3602;
+            border-top: 0;
+            @include box-shadow(inset 0 -5px 5px 0 rgba(0,0,0,0.2));
+        }
+
+        $leg-width: ($pelvis-width - $leg-spacing) / 2;
+        $tag-width: $leg-width - 8px;
+
+        .tag {
+            top: 9px;
+            right: 4px;
+            width: $tag-width;
+            height: 26px;
+            background: #000000;
+            @include border-radius(4px);
+            z-index: 2;
+
+            &:before {
+                top: -8px;
+                left: calc(50% - 14%);
+                width: 28%;
+                height: 8px;
+                background: #000000;
+            }
+
+            &:after {
+                top: -10px;
+                left: calc(50% - 7%);
+                width: 14%;
+                height: 8px;
+                background: #666666;
+            }
+
+            .id {
+                left: 2px;
+                bottom: 2px;
+                height: 16px;
+                width: $tag-width - 4px;
+                background: #999999;
+                @include border-radius(2px);
+
+                &:before {
+                    top: 2px;
+                    left: 2px;
+                    height: 10px;
+                    width: 10px;
+                    background: #000000;
+                }
+
+                &:after {
+                    top: 2px;
+                    right: 2px;
+                    height: 2px;
+                    width: 15px;
+                    background: #000000;
+                    @include box-shadow(0 3px 0 0 #000000, 0 6px 0 0 #000000);
+                }
+            }
+        }
 
         .leg {
             bottom: -($leg-height + 1px);
@@ -434,6 +524,7 @@ $hair-height: 40px;
     }
 
     $shadow-width: 100px;
+}
 }
 
 
@@ -469,7 +560,6 @@ $hair-height: 40px;
 
     }
 
-//엉덩이
 .hip {
          top: 0;
          left: 0;
@@ -480,6 +570,9 @@ $hair-height: 40px;
          // filter: blur(5px);
          z-index: 12;
         }
+
+
+//엉덩이
 
 //중요부위 실
 // .pelvis {
