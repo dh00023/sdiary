@@ -25,7 +25,7 @@ Post - Comment : 1 대 N 관계
 - signup
 - new (성감대기록)
 - show
-- edit
+- edit : radiobutton변경이 안되도록해야한다.
 - post_index
 - post_show
 - post_edit
