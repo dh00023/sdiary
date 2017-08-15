@@ -9,6 +9,9 @@
 // padding:0;
 // }
 
+.containerbox{
+ max-height: 500px;
+}
 .container1{
 //  background-color: rgb(44,76,121);
 @include filter-gradient(#2c4c79, #8dbbea, vertical);
