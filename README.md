@@ -55,11 +55,15 @@ Post - Comment : 1 대 N 관계
 
 
 
-## 2017-08-15 해야할일
-1. Welcome page
-2. navbar
-3. naver-login
-4. lego image
-5. bootstrap적용
-6. 모델 확실히
+## 다혜
+- Diary CRUD , model
+- bootstrap적용
+- navbar
+- lego image
 
+#### 해야할일
+1. 'diaries/new'
+2. button수정
+3. posts페이지 부트스트랩적용
+4. chart-kick
+5. 디플로이
