@@ -59,5 +59,6 @@ end
 
 gem 'tinymce-rails'
 gem 'kaminari'
+gem 'will_paginate', '~> 3.0'
 
 
