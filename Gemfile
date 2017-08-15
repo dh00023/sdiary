@@ -6,8 +6,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'compass'
 gem 'compass-rails'
 
+# 회원가입
 gem 'devise'
 gem 'omniauth-facebook'
+
+# 부트스트랩
+gem 'bootstrap', '~> 4.0.0.beta'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
