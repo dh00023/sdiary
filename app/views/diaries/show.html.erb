@@ -16,7 +16,7 @@
             <p class="mt-5"><%= link_to '수정하기', edit_diary_path(@diary),class: "card-link" %> |
             <%= link_to '뒤로', diaries_path ,class: "card-link"%></p>
           </div>
-        </div>
+       </div>
       </div>
     </div>
   </div>
@@ -35,115 +35,63 @@ $( document ).ready(function() {
     $(".hair").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "wrist" %>
-    $(".wrist").css("background-color","red");
+  <% if @diary.category == "왼팔뚝" %>
+    $(".shoulder.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "shoulder_left" %>
-    $("shoulder.left").css("background-color","red");
+  <% if @diary.category == "오른팔뚝" %>
+    $(".shoulder.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "shoulder_right" %>
-    $("shoulder.right").css("background-color","red");
+  <% if @diary.category == "허리" %>
+    $(".waist").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "hand_left" %>
+  <% if @diary.category == "왼손" %>
     $(".hand.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "hand_right" %>
+  <% if @diary.category == "오른손" %>
     $(".hand.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "leg_right" %>
-    $(".leg right").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "leg_left" %>
-    $(".leg.left").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "arm_left" %>
-    $(".arm.left").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "arm_right" %>
-    $(".arm.right").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "foot_left" %>
-    $(".foot.left").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "foot_right" %>
-    $(".foot.right").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "wrist left" %>
-    $(".wrist").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "wrist_right" %>
-    $(".wrist.right").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "waist" %>
-    $(".belt").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "shoulder_left" %>
-    $("shoulder.left").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "shoulder_right" %>
-    $("shoulder.right").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "hand_left" %>
-    $(".hand.left").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "hand_right" %>
-    $(".hand.right").css("background-color","red");
-  <% end %>
-
-  <% if @diary.category == "leg_right" %>
+  <% if @diary.category == "오른다리" %>
     $(".leg.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "leg_left" %>
+  <% if @diary.category == "왼다리" %>
     $(".leg.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "arm_left" %>
+  <% if @diary.category == "왼팔" %>
     $(".arm.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "arm_right" %>
+  <% if @diary.category == "오른팔" %>
     $(".arm.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "foot_left" %>
+  <% if @diary.category == "왼발" %>
     $(".foot.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "foot_right" %>
+  <% if @diary.category == "오른발" %>
     $(".foot.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "core" %>
+  <% if @diary.category == "중요부위" %>
     $(".core").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "hip" %>
+  <% if @diary.category == "엉덩이" %>
     $(".hip").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "body" %>
+  <% if @diary.category == "몸" %>
     $(".body").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "back" %>
+  <% if @diary.category == "등" %>
     $(".back").css("background-color","red");
   <% end %>
 });

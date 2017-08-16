@@ -1,8 +1,8 @@
 function reset(){
-    $(".head, .arm, .leg, .foot, .wrist, .hip, .back, .core, .belt, .shoulder, .core").css("background-color", "#FFE4C4")
+    $(".head, .arm, .arm2, .leg, .leg2, .foot, .foot2, .wrist, .hip, .back, .core, .belt, .shoulder, .shoulder2, .core").css("background-color", "#FFE4C4")
     $(".hair").css("background-color", "black");
     $(".body2, .body3").css("border-color", "transparent transparent #FFE4C4 transparent");
-    $(".hand").css("border", "13px solid #FFE4C4");
+    $(".hand, .hand2").css("border", "13px solid #FFE4C4");
 }
 
 $("#diary_category_head").click(function(){
@@ -12,53 +12,52 @@ $("#diary_category_head").click(function(){
 
 $("#diary_category_arm_left").click(function(){
     reset();
-    $(".arm.left").css("background-color", "red");
+    $(".arm.right").css("background-color", "red");
+    $(".arm2.left").css("background-color", "red");
 });
 
 $("#diary_category_arm_right").click(function(){
     reset();
-    $(".arm.right").css("background-color", "red");
+    $(".arm.left").css("background-color", "red");
+    $(".arm2.right").css("background-color", "red");
 });
 
 $("#diary_category_hand_left").click(function(){
     reset();
-    $(".hand.left").css("border", "13px solid red");
+    $(".hand.right").css("border", "13px solid red");
+    $(".hand2.left").css("border", "13px solid red");
 });
 
 $("#diary_category_hand_right").click(function(){
     reset();
-    $(".hand.right").css("border", "13px solid red");
+    $(".hand.left").css("border", "13px solid red");
+    $(".hand2.right").css("border", "13px solid red");
 });
 
 $("#diary_category_leg_left").click(function(){
     reset();
-    $(".leg.left").css("background-color", "red");
+    $(".leg.right").css("background-color", "red");
+    $(".leg2.left").css("background-color", "red");
 });
 
 $("#diary_category_leg_right").click(function(){
     reset();
-    $(".leg.right").css("background-color", "red");
+    $(".leg.left").css("background-color", "red");
+    $(".leg2.right").css("background-color", "red");
 });
 
 $("#diary_category_foot_left").click(function(){
     reset();
-    $(".foot.left").css("background-color", "red");
+    $(".foot.right").css("background-color", "red");
+    $(".foot2.left").css("background-color", "red");
 });
 
 $("#diary_category_foot_right").click(function(){
     reset();
-    $(".foot.right").css("background-color", "red");
+    $(".foot.left").css("background-color", "red");
+    $(".foot2.right").css("background-color", "red");
 });
 
-    // $("#diary_category_wrist_left").click(function(){
-    //     reset();
-    //     $(".wrist.left").css("background-color", "red");
-    // });
-
-    // $("#diary_category_wrist_right").click(function(){
-    //     reset();
-    //     $(".wrist.right").css("background-color", "red");
-    //
 
 $("#diary_category_core").click(function(){
     reset();
@@ -95,12 +94,14 @@ $("#diary_category_waist").click(function(){
 
 $("#diary_category_shoulder_left").click(function(){
 	reset();
-    $(".shoulder.left").css("background-color", "red");
+    $(".shoulder.right").css("background-color", "red");
+    $(".shoulder2.left").css("background-color", "red");
 });
 
 $("#diary_category_shoulder_right").click(function(){
 	reset();
-    $(".shoulder.right").css("background-color", "red");
+    $(".shoulder.left").css("background-color", "red");
+    $(".shoulder2.right").css("background-color", "red");
 });
 
 
