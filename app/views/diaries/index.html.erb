@@ -4,7 +4,7 @@
       <div class="col-md-6">
         <div class="jumbotron">
           <%= render "lego" %>
-          <%= link_to 'New Diary', new_diary_path %>
+          <%= link_to '새로쓰기', new_diary_path ,class: "btn btn-outline-dark"%>
         </div>
       </div>
       <div class="col-md-5">
@@ -15,6 +15,8 @@
               <th>성감대</th>
               <th>Memo</th>
               <th>link</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -22,9 +24,9 @@
             <tr>
               <td><%= diary.category %></td>
               <td><%= truncate(diary.memo,:escape => false, :omission => '...' )%></td>
-              <td><%= link_to 'Show', diary %></td>
-              <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
-              <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show', diary ,class: "btn btn-outline-dark btn-sm"%></td>
+              <td><%= link_to 'Edit', edit_diary_path(diary) ,class: "btn btn-outline-dark btn-sm" %></td>
+              <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: '삭제하시겠습니까?' } ,class: "btn btn-outline-dark btn-sm"%></td>
             </tr>
           <% end %>
           </tbody>
@@ -102,7 +104,7 @@ $( document ).ready(function() {
   <% end %>
 
   <% if diary.category == "waist" %>
-    $(".waist").css("background-color","red");
+    $(".belt").css("background-color","red");
   <% end %>
 
   <% if diary.category == "shoulder_left" %>
@@ -163,4 +165,3 @@ $( document ).ready(function() {
 <% end %>
 });
 </script>
-lo

@@ -6,169 +6,134 @@
           <%= render "lego" %>
         </div>
       </div>
-      <div class="col-md-5">
-        <%= form_for(@diary) do |f| %>
-          <% if @diary.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@diary.errors.count, "error") %> prohibited this diary from being saved:</h2>
-
-              <ul>
-              <% @diary.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
-          <div class="form-group">
-            
-            <%= f.label :성감대부분%></br>
-            <label><%= f.radio_button :category,'head'%><span> 얼굴 </span></label>
-            <label><%= f.radio_button :category,'hair'%><span> 머리카락 </span></label>
-            <label><%= f.radio_button :category,'waist'%><span> 허리 </span></label>
-            <label><%= f.radio_button :category,'shoulder_left'%><span> 왼쪽팔뚝 </span></label>
-            <label><%= f.radio_button :category,'shoulder_right'%><span> 오른쪽팔뚝 </span></label>
-            <label><%= f.radio_button :category,'arm_left'%><span> 왼쪽팔 </span></label>
-            <label><%= f.radio_button :category,'arm_right'%><span> 오른쪽팔 </span></label>
-            <label><%= f.radio_button :category,'hand_left'%><span> 왼손 </span></label>
-            <label><%= f.radio_button :category,'hand_right'%><span> 오른손 </span></label>
-            <label><%= f.radio_button :category,'leg_right'%><span> 오른쪽다리 </span></label>
-            <label><%= f.radio_button :category,'leg_left'%><span> 왼쪽다리 </span></label>
-            <label><%= f.radio_button :category,'foot_left'%><span> 왼발 </span></label>
-            <label><%= f.radio_button :category,'foot_right'%><span> 오른발 </span></label>
-            <!-- <label><%= f.radio_button :category,'wrist_left'%><span> 왼손목 </span></label> -->
-            <!-- <label><%= f.radio_button :category,'wrist_right'%><span> 오른손목 </span></label> -->
-            <label><%= f.radio_button :category,'hip'%><span> 엉덩이 </span></label>
-            <label><%= f.radio_button :category,'body'%><span> 몸 </span></label>
-            <label><%= f.radio_button :category,'back'%><span> 등 </span></label>
-            <label><%= f.radio_button :category,'core'%><span> 중요부위 </span></label>
-            
-          </div>
-          
-          <div class="form-group">
-            <%= f.label :세부사항 %><br>
-            <%= f.text_area :memo ,class: "form-control", id: "exampleFormControlTextarea1" ,rows: "10"%>
-          </div>
-          <%= f.submit nil,class: "btn btn-outline-dark" %>
-          <%= link_to 'Show', @diary ,class: 'btn btn-dark'%> <%= link_to 'Back', diaries_path ,class: 'btn btn-dark'%>
-        <% end %>
-      </div>
+      <%= render "form" %>
     </div>
   </div>
 </div>
 
 
-
-
 <script type="text/javascript">
-    function reset(){
-        $(".head, .arm, .leg, .foot, .wrist, .hip, .back, .core, .belt, .shoulder, .core").css("background-color", "#FFE4C4")
-        $(".hair").css("background-color", "black");
-        $(".body2, .body3").css("border-color", "transparent transparent #FFE4C4 transparent");
-        $(".hand").css("border", "13px solid #FFE4C4");
-    }
+    $( document ).ready(function() {
+      <% if @diary.category == "head" %>
+        $(".head").css("background-color","red");
+      <% end %>
 
-    $("#diary_category_head").click(function(){
-        reset();
-        $(".head").css("background-color", "red");
+      <% if @diary.category == "hair" %>
+        $(".hair ").css("background-color","red");
+        // $('div.hair').append('<style type="text/css"> background-color:red </style>');
+      <% end %>
+
+      <% if @diary.category == "wrist" %>
+        $(".wrist").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "shoulder_left" %>
+        $("shoulder.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "shoulder_right" %>
+        $("shoulder.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "hand_left" %>
+        $(".hand.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "hand_right" %>
+        $(".hand.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "leg_right" %>
+        $(".leg.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "leg_left" %>
+        $(".leg.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "arm_left" %>
+        $(".arm.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "arm_right" %>
+        $(".arm.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "foot_left" %>
+        $(".foot.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "foot_right" %>
+        $(".foot.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "wrist left" %>
+        $(".wrist").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "wrist_right" %>
+        $(".wrist.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "waist" %>
+        $(".belt").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "shoulder_left" %>
+        $("shoulder.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "shoulder_right" %>
+        $("shoulder.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "hand_left" %>
+        $(".hand.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "hand_right" %>
+        $(".hand.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "leg_right" %>
+        $(".leg.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "leg_left" %>
+        $(".leg.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "arm_left" %>
+        $(".arm.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "arm_right" %>
+        $(".arm.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "foot_left" %>
+        $(".foot.left").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "foot_right" %>
+        $(".foot.right").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "core" %>
+        $(".core").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "hip" %>
+        $(".hip").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "body" %>
+        $(".body").css("background-color","red");
+      <% end %>
+
+      <% if @diary.category == "back" %>
+        $(".back").css("background-color","red");
+      <% end %>
     });
-
-    $("#diary_category_arm_left").click(function(){
-        reset();
-        $(".arm.left").css("background-color", "red");
-    });
-
-    $("#diary_category_arm_right").click(function(){
-        reset();
-        $(".arm.right").css("background-color", "red");
-    });
-
-    $("#diary_category_hand_left").click(function(){
-        reset();
-        $(".hand.left").css("border", "13px solid red");
-    });
-
-    $("#diary_category_hand_right").click(function(){
-        reset();
-        $(".hand.right").css("border", "13px solid red");
-    });
-
-    $("#diary_category_leg_left").click(function(){
-        reset();
-        $(".leg.left").css("background-color", "red");
-    });
-
-    $("#diary_category_leg_right").click(function(){
-        reset();
-        $(".leg.right").css("background-color", "red");
-    });
-
-    $("#diary_category_foot_left").click(function(){
-        reset();
-        $(".foot.left").css("background-color", "red");
-    });
-
-    $("#diary_category_foot_right").click(function(){
-        reset();
-        $(".foot.right").css("background-color", "red");
-    });
-
-    // $("#diary_category_wrist_left").click(function(){
-    //     reset();
-    //     $(".wrist.left").css("background-color", "red");
-    // });
-
-    // $("#diary_category_wrist_right").click(function(){
-    //     reset();
-    //     $(".wrist.right").css("background-color", "red");
-    //
-
-    $("#diary_category_core").click(function(){
-        reset();
-        $(".core").css("background-color", "red");
-    });
-
-    $("#diary_category_hip").click(function(){
-        reset();
-        $(".hip").css("background-color", "red");
-    });
-
-    // var suit_color = $('.suit_color');
-
-    $("#diary_category_body").click(function(){
-        reset();
-        $(".body2").css("border-color", "transparent transparent red transparent");
-    });
-
-    $("#diary_category_back").click(function(){
-        reset();
-        $(".body3").css("border-color", "transparent transparent red transparent");
-        // $('div.hair').append('<style type="text/css"> .emmet .body{border-color:transparent transparent red transparent;} </style>');
-    });
-
-    $("#diary_category_core").click(function(){
-        reset();
-        $(".core").css("background-color", "red");
-    });
-
-    $("#diary_category_waist").click(function(){
-        reset();
-        $(".belt").css("background-color", "red");
-    });
-
-    $("#diary_category_shoulder_left").click(function(){
-        reset();
-        $(".shoulder.left").css("background-color", "red");
-    });
-
-    $("#diary_category_shoulder_right").click(function(){
-        reset();
-        $(".shoulder.right").css("background-color", "red");
-    });
-
-
-    $("#diary_category_hair").click(function(){
-        reset();
-        $(".hair").css("background-color", "red");
-    });
-
 </script>
+<%= javascript_include_tag "diaries", "data-turbolinks-track" => true  %>
