@@ -9,6 +9,7 @@ gem 'compass-rails'
 # 회원가입
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-naver'
 
 # 부트스트랩
 gem 'bootstrap', '~> 4.0.0.beta'
