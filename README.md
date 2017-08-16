@@ -54,6 +54,8 @@ Post - Category : N대 1관계
 - 중요부위 - core class 생성 - 마무리
 - 부트스트랩 깨짐으로 인한 css 수정
 - user/sign_in -레이아웃 배치 작업 
+- 좌우 비대칭 관계 (scss 클래스를 2번으로 추가해서 바꿈)
+- show, index db 데이터 이름 수정 
 
 
 

@@ -41,72 +41,74 @@
 
 <script>
 $( document ).ready(function() {
-  <% if @diary.category == "얼굴" %>
+<% @diaries.each do |diary| %>
+  <% if diary.category == "얼굴" %>
     $(".head").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "머리카락" %>
+  <% if diary.category == "머리카락" %>
     $(".hair").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "왼팔뚝" %>
+  <% if diary.category == "왼팔뚝" %>
     $(".shoulder.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "오른팔뚝" %>
+  <% if diary.category == "오른팔뚝" %>
     $(".shoulder.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "허리" %>
+  <% if diary.category == "허리" %>
     $(".waist").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "왼손" %>
+  <% if diary.category == "왼손" %>
     $(".hand.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "오른손" %>
+  <% if diary.category == "오른손" %>
     $(".hand.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "오른다리" %>
+  <% if diary.category == "오른다리" %>
     $(".leg.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "왼다리" %>
+  <% if diary.category == "왼다리" %>
     $(".leg.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "왼팔" %>
+  <% if diary.category == "왼팔" %>
     $(".arm.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "오른팔" %>
+  <% if diary.category == "오른팔" %>
     $(".arm.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "왼발" %>
+  <% if diary.category == "왼발" %>
     $(".foot.left").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "오른발" %>
+  <% if diary.category == "오른발" %>
     $(".foot.right").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "중요부위" %>
+  <% if diary.category == "중요부위" %>
     $(".core").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "엉덩이" %>
+  <% if diary.category == "엉덩이" %>
     $(".hip").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "몸" %>
+  <% if diary.category == "몸" %>
     $(".body").css("background-color","red");
   <% end %>
 
-  <% if @diary.category == "등" %>
+  <% if diary.category == "등" %>
     $(".back").css("background-color","red");
   <% end %>
+<% end %>
 });
 </script>
