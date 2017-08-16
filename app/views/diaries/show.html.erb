@@ -36,47 +36,57 @@ $( document ).ready(function() {
   <% end %>
 
   <% if @diary.category == "왼팔뚝" %>
-    $(".shoulder.left").css("background-color","red");
+    $(".shoulder.right").css("background-color", "red");
+    $(".shoulder2.left").css("background-color", "red");
   <% end %>
 
   <% if @diary.category == "오른팔뚝" %>
-    $(".shoulder.right").css("background-color","red");
+    $(".shoulder.left").css("background-color", "red");
+    $(".shoulder2.right").css("background-color", "red");
   <% end %>
 
   <% if @diary.category == "허리" %>
-    $(".waist").css("background-color","red");
+    $(".belt").css("background-color","red");
   <% end %>
 
   <% if @diary.category == "왼손" %>
-    $(".hand.left").css("background-color","red");
+    $(".hand.right").css("border", "13px solid red");
+    $(".hand2.left").css("border", "13px solid red");
   <% end %>
 
   <% if @diary.category == "오른손" %>
-    $(".hand.right").css("background-color","red");
+    $(".hand.left").css("border", "13px solid red");
+    $(".hand2.right").css("border", "13px solid red");
   <% end %>
 
   <% if @diary.category == "오른다리" %>
-    $(".leg.right").css("background-color","red");
+    $(".leg.left").css("background-color", "red");
+    $(".leg2.right").css("background-color", "red");
   <% end %>
 
   <% if @diary.category == "왼다리" %>
-    $(".leg.left").css("background-color","red");
+    $(".leg.right").css("background-color", "red");
+    $(".leg2.left").css("background-color", "red");
   <% end %>
 
   <% if @diary.category == "왼팔" %>
-    $(".arm.left").css("background-color","red");
+    $(".arm.right").css("background-color", "red");
+    $(".arm2.left").css("background-color", "red");
   <% end %>
 
   <% if @diary.category == "오른팔" %>
-    $(".arm.right").css("background-color","red");
+    $(".arm.left").css("background-color", "red");
+    $(".arm2.right").css("background-color", "red");
   <% end %>
 
   <% if @diary.category == "왼발" %>
-    $(".foot.left").css("background-color","red");
+    $(".foot.right").css("background-color", "red");
+    $(".foot2.left").css("background-color", "red");
   <% end %>
 
   <% if @diary.category == "오른발" %>
-    $(".foot.right").css("background-color","red");
+     $(".foot.left").css("background-color", "red");
+    $(".foot2.right").css("background-color", "red");
   <% end %>
 
   <% if @diary.category == "중요부위" %>
@@ -88,11 +98,11 @@ $( document ).ready(function() {
   <% end %>
 
   <% if @diary.category == "몸" %>
-    $(".body").css("background-color","red");
+    $(".body2").css("border-color", "transparent transparent red transparent");
   <% end %>
 
   <% if @diary.category == "등" %>
-    $(".back").css("background-color","red");
+    $(".body3").css("border-color", "transparent transparent red transparent");
   <% end %>
 });
 </script>

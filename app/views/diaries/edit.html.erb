@@ -14,126 +14,83 @@
 
 <script type="text/javascript">
     $( document ).ready(function() {
-      <% if @diary.category == "head" %>
-        $(".head").css("background-color","red");
-      <% end %>
+       <% if @diary.category == "얼굴" %>
+    $(".head").css("background-color","red");
+  <% end %>
 
-      <% if @diary.category == "hair" %>
-        $(".hair ").css("background-color","red");
-        // $('div.hair').append('<style type="text/css"> background-color:red </style>');
-      <% end %>
+  <% if @diary.category == "머리카락" %>
+    $(".hair").css("background-color","red");
+  <% end %>
 
-      <% if @diary.category == "wrist" %>
-        $(".wrist").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "왼팔뚝" %>
+    $(".shoulder.right").css("background-color", "red");
+    $(".shoulder2.left").css("background-color", "red");
+  <% end %>
 
-      <% if @diary.category == "shoulder_left" %>
-        $("shoulder.left").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "오른팔뚝" %>
+    $(".shoulder.left").css("background-color", "red");
+    $(".shoulder2.right").css("background-color", "red");
+  <% end %>
 
-      <% if @diary.category == "shoulder_right" %>
-        $("shoulder.right").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "허리" %>
+    $(".belt").css("background-color","red");
+  <% end %>
 
-      <% if @diary.category == "hand_left" %>
-        $(".hand.left").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "왼손" %>
+    $(".hand.right").css("border", "13px solid red");
+    $(".hand2.left").css("border", "13px solid red");
+  <% end %>
 
-      <% if @diary.category == "hand_right" %>
-        $(".hand.right").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "오른손" %>
+    $(".hand.left").css("border", "13px solid red");
+    $(".hand2.right").css("border", "13px solid red");
+  <% end %>
 
-      <% if @diary.category == "leg_right" %>
-        $(".leg.right").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "오른다리" %>
+    $(".leg.left").css("background-color", "red");
+    $(".leg2.right").css("background-color", "red");
+  <% end %>
 
-      <% if @diary.category == "leg_left" %>
-        $(".leg.left").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "왼다리" %>
+    $(".leg.right").css("background-color", "red");
+    $(".leg2.left").css("background-color", "red");
+  <% end %>
 
-      <% if @diary.category == "arm_left" %>
-        $(".arm.left").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "왼팔" %>
+    $(".arm.right").css("background-color", "red");
+    $(".arm2.left").css("background-color", "red");
+  <% end %>
 
-      <% if @diary.category == "arm_right" %>
-        $(".arm.right").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "오른팔" %>
+    $(".arm.left").css("background-color", "red");
+    $(".arm2.right").css("background-color", "red");
+  <% end %>
 
-      <% if @diary.category == "foot_left" %>
-        $(".foot.left").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "왼발" %>
+    $(".foot.right").css("background-color", "red");
+    $(".foot2.left").css("background-color", "red");
+  <% end %>
 
-      <% if @diary.category == "foot_right" %>
-        $(".foot.right").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "오른발" %>
+     $(".foot.left").css("background-color", "red");
+    $(".foot2.right").css("background-color", "red");
+  <% end %>
 
-      <% if @diary.category == "wrist left" %>
-        $(".wrist").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "중요부위" %>
+    $(".core").css("background-color","red");
+  <% end %>
 
-      <% if @diary.category == "wrist_right" %>
-        $(".wrist.right").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "엉덩이" %>
+    $(".hip").css("background-color","red");
+  <% end %>
 
-      <% if @diary.category == "waist" %>
-        $(".belt").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "몸" %>
+    $(".body2").css("border-color", "transparent transparent red transparent");
+  <% end %>
 
-      <% if @diary.category == "shoulder_left" %>
-        $("shoulder.left").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "shoulder_right" %>
-        $("shoulder.right").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "hand_left" %>
-        $(".hand.left").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "hand_right" %>
-        $(".hand.right").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "leg_right" %>
-        $(".leg.right").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "leg_left" %>
-        $(".leg.left").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "arm_left" %>
-        $(".arm.left").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "arm_right" %>
-        $(".arm.right").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "foot_left" %>
-        $(".foot.left").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "foot_right" %>
-        $(".foot.right").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "core" %>
-        $(".core").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "hip" %>
-        $(".hip").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "body" %>
-        $(".body").css("background-color","red");
-      <% end %>
-
-      <% if @diary.category == "back" %>
-        $(".back").css("background-color","red");
-      <% end %>
+  <% if @diary.category == "등" %>
+    $(".body3").css("border-color", "transparent transparent red transparent");
+  <% end %>
     });
 </script>
 <%= javascript_include_tag "diaries", "data-turbolinks-track" => true  %>
