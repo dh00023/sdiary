@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @category = Category.find_by(id: @post.category_id)
   end
 
   # GET /posts/new

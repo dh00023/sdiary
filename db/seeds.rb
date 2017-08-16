@@ -16,8 +16,9 @@ Category.create([{ name: "머리" },
                  { name: "중요부위" },
                  { name: "엉덩이" },
                  { name: "몸" },
-                 { name: "등" },])
+                 { name: "등"},
+                 ])
+#(1..100).each do
+#	Post.create(title: 'Emanuel', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat adipisci, libero voluptas eveniet? Veniam esse vero tempore neque. Quia dolores eveniet voluptas culpa alias officia aut quos fuga dicta, odio!')
+#end
 
-(1..100).each do
-	Post.create(title: 'Emanuel', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat adipisci, libero voluptas eveniet? Veniam esse vero tempore neque. Quia dolores eveniet voluptas culpa alias officia aut quos fuga dicta, odio!')
-end
