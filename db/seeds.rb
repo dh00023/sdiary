@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Category.create([{ name: "머리" }, 
+                 { name: "머리카락" },
+                 { name: "허리" },
+                 { name: "팔" },
+                 { name: "다리" },
+                 { name: "팔" },
+                 { name: "손" },
+                 { name: "중요부위" },
+                 { name: "엉덩이" },
+                 { name: "몸" },
+                 { name: "등" },])
