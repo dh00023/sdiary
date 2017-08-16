@@ -64,10 +64,14 @@ Post - Category : N대 1관계
 - bootstrap적용
 - navbar
 - lego image
+- 'diaries/new'
+- button수정
+- posts페이지 부트스트랩적용
 
 #### 해야할일
-1. 'diaries/new'
-2. button수정
-3. posts페이지 부트스트랩적용
-4. chart-kick
-5. 디플로이
+1. 댓글(수정,삭제버튼만들기)
+2. posts/show페이지에서 카테고리추가(현경,승하)
+3. chart-kick
+4. 디플로이
+5. 로고, 색지정하기
+6. 네이버로그인(명상)

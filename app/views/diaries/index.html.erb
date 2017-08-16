@@ -23,7 +23,7 @@
               <% @diaries.each do |diary| %>
             <tr>
               <td><%= diary.category %></td>
-              <td><%= truncate(diary.memo,:escape => false, :omission => '...' )%></td>
+              <td><%= truncate(diary.memo,:escape => false, :omission => '...',:length => 13 )%></td>
               <td><%= link_to 'Show', diary ,class: "btn btn-outline-dark btn-sm"%></td>
               <td><%= link_to 'Edit', edit_diary_path(diary) ,class: "btn btn-outline-dark btn-sm" %></td>
               <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: '삭제하시겠습니까?' } ,class: "btn btn-outline-dark btn-sm"%></td>

@@ -1,32 +1,35 @@
-<%= paginate @posts %>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<ul class="nav flex-wrap">
+  <li class="nav-item h2">게시판</li>
+  <span class="ml-auto align-self-center hidden-sm-down">
+    <%= link_to '글쓰기', new_post_path ,class: "m-1 btn btn-thin btn-primary font-size-sm"%>
+  </span>
+</ul>
 
-<% Category.all.each do |category| %>
-  <%= link_to category.name, posts_path(category: category.name) %>
-<% end %>  
 
-<table>
-  <thead>
+<table class="table table-hover mt-3">
+  <thead class="thead-default">
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
+      <th>제목</th>
+      <th>글쓴이</th>
+      <th>날짜</th>
     </tr>
   </thead>
-
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to post.title, post%></td>
+        <td>글쓴이</td>
+        <td>9시간전</td>
       </tr>
     <% end %>
   </tbody>
-</table><%= will_paginate @allpost, :previous_label => '이전', :next_label => '다음' %>
-<br>
-<%= link_to 'New Post', new_post_path %>
+</table>
+
+<%= paginate @posts%>
+<!-- 이 부분 왜 있는지 모르겠음!!!!!! 아무것도 안나옴 아 내가 카테고리 모델이 없구나
+카테고리부분 seed.rb에 생성해줘 그래야 자동으로 다 생성되니깐!-->
+<% Category.all.each do |category| %>
+  <%= link_to category.name, posts_path(category: category.name) %>
+<% end %> 
