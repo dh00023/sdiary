@@ -62,9 +62,6 @@ Post - Category : N대 1관계
 - show, index db 데이터 이름 수정 
 - user_sign_in, user_sign_up, user_edit page revised
 
-
-
-
 ## 다혜
 - Diary CRUD , model
 - bootstrap적용
@@ -73,13 +70,14 @@ Post - Category : N대 1관계
 - 'diaries/new'
 - button수정
 - posts페이지 부트스트랩적용
-- posts/show페이지에서 카테고리추가
+- posts페이지에서 카테고리추가
 - Post게시판에서 user정보불러오기
 - user(생년월일, 이름, 별명, 전화번호 추가)
+- routes설정
+- chart-kick
 
 #### 해야할일
 1. 댓글(수정,삭제버튼만들기)
-3. chart-kick
 4. 디플로이
 5. 로고, 색지정하기
 6. 네이버로그인(명상)

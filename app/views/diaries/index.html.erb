@@ -5,9 +5,8 @@
         <div class="jumbotron">
           <%= render "lego" %>
         </div>
-        <%= link_to '새로쓰기', new_diary_path ,class: "btn btn-dark"%>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-6">
         <div class="form-group">
         <table class="table table-hover">
           <thead>
@@ -23,7 +22,7 @@
               <% @diaries.each do |diary| %>
             <tr>
               <td><%= diary.category %></td>
-              <td><%= truncate(diary.memo,:escape => false, :omission => '...',:length => 13 )%></td>
+              <td><%= truncate(diary.memo,:escape => false, :omission => '...',:length => 23 )%></td>
               <td><%= link_to 'Show', diary ,class: "btn btn-outline-dark btn-sm"%></td>
               <td><%= link_to 'Edit', edit_diary_path(diary) ,class: "btn btn-outline-dark btn-sm" %></td>
               <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: '삭제하시겠습니까?' } ,class: "btn btn-outline-dark btn-sm"%></td>
@@ -34,6 +33,7 @@
         </div>
       </div>
     </div>
+    <%= link_to '새로쓰기', new_diary_path ,class: "btn btn-dark float-right mr-2"%>
   </div>
 </div>
 

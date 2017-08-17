@@ -12,10 +12,12 @@ gem 'omniauth-naver' # naver
 gem 'rolify'     # role 관리
 gem 'authority'  # 권한설정
 
-
 # 부트스트랩
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'simple_form'
+
+# 차트
+gem 'chartkick', '~> 2.2', '>= 2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

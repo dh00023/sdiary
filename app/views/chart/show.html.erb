@@ -1,0 +1,7 @@
+<div>
+    <h3>성감대선택수</h3>
+    <%= line_chart @diaries.group(:category).count, discrete: true , width: "800px", height: "500px"%>
+    <%= pie_chart @diaries.group(:category).count ,colors: ["#b00", "#666"]%>
+    <%= column_chart @diaries.group(:category).count, stacked: true %>
+    <%= bar_chart @diaries.group(:category).count %>
+</div>
