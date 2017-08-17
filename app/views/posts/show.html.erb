@@ -21,7 +21,7 @@
   <p class="text-muted mt-5">댓글</p>
   <table class="table">
     <tbody>
-      <tr>
+      <tr id="comments">
       <% @post.comments.each do |comment| %>
           <%= render partial: "comments/item", locals: { comment: comment } %>
       <% end %>
@@ -31,7 +31,7 @@
     <%= form_for [@post, @post.comments.new], remote: true do |f| %>
       <div class="form-group">
         <%= f.text_area :content ,class: "form-control" ,rows: "10"%>
-      </div>
-</div>
         <%= f.submit '작성하기', class: "btn btn-dark float-right" %>
       <% end %>
+      </div>
+</div>

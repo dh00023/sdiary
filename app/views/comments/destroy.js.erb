@@ -1,7 +1,5 @@
-<% if comment.user.id == current_user.id %> 
-    (function($){
-        $("#comment-<%= @comment.id %>").remove();
-    })(jQuery)                
-<% end %> 
+(function($){
+    $("#comment-<%= @comment.id %>").remove();
+})(jQuery)                
 
 
