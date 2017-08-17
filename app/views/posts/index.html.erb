@@ -1,5 +1,28 @@
 <p id="notice"><%= notice %></p>
+<ul class="nav flex-wrap">
+  <li class="nav-item h2">
+    <%if params[:category].blank?%>
+      전체게시판
+    <% else %>
+      <%= Category.find(@category_id).name %> 게시판
+    <% end %>
+  </li>
+  <div class="dropdown show mx-3">
+    <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        카테고리
+    </a>
 
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <% Category.all.each do |category| %>
+        <%= link_to category.name, posts_path(category: category.name), class: "dropdown-item" %>
+      <% end %> 
+      <%= link_to '전체', posts_path, class: "dropdown-item" %>
+    </div>
+  </div>
+  <span class="ml-auto align-self-center hidden-sm-down">
+    <%= link_to '글쓰기', new_post_path ,class: "m-1 btn btn-thin btn-danger font-size-sm"%>
+  </span>
+</ul>
 <table class="table table-hover mt-3">
   <thead class="thead-default">
     <tr>
@@ -20,8 +43,4 @@
 </table>
 
 <%= paginate @posts%>
-<!-- 이 부분 왜 있는지 모르겠음!!!!!! 아무것도 안나옴 아 내가 카테고리 모델이 없구나
-카테고리부분 seed.rb에 생성해줘 그래야 자동으로 다 생성되니깐!-->
-<% Category.all.each do |category| %>
-  <%= link_to category.name, posts_path(category: category.name) %>
-<% end %> 
+

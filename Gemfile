@@ -12,6 +12,7 @@ gem 'omniauth-facebook'
 
 # 부트스트랩
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

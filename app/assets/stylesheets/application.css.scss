@@ -20,3 +20,13 @@
     justify-content: flex;
     margin-top:50px;
 }
+.btn-light:active, .btn-light.active, .show > .btn-light.dropdown-toggle {
+    background-color: #ffffff;
+    background-image: none;
+    border-color: #ffffff;
+}
+.btn-light {
+    color: #111;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
