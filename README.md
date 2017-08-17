@@ -31,12 +31,16 @@ Post - Category : N대 1관계
 - post_new
 
 ## Gem
-- devise
-- omniauth-facebook
 - chartkick
 - gem 'compass-rails' # 이미지 불러올 때 필요한 젬
 - gem 'tinymce'
 - gem paginate
+- gem 'simple_form' # input태그에 bootstrap태그 사용가
+- devise
+- omniauth-facebook
+- gem 'omniauth-naver' # naver
+- gem 'rolify'     # role 관리
+- gem 'authority'  # 권한설정
 
 ## 역할분배
 - 이미지(성감대 선택) : 선홍, 다혜, 지연
@@ -56,6 +60,8 @@ Post - Category : N대 1관계
 - user/sign_in -레이아웃 배치 작업 
 - 좌우 비대칭 관계 (scss 클래스를 2번으로 추가해서 바꿈)
 - show, index db 데이터 이름 수정 
+- user_sign_in, user_sign_up, user_edit page revised
+
 
 
 

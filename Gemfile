@@ -2,17 +2,20 @@ source 'https://rubygems.org'
 
 
 # 레고 이미지 보이게 하기
-gem 'sass-rails', '~> 5.0'
 gem 'compass'
 gem 'compass-rails'
 
 # 회원가입
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-naver' # naver
+gem 'rolify'     # role 관리
+gem 'authority'  # 권한설정
+
 
 # 부트스트랩
 gem 'bootstrap', '~> 4.0.0.beta'
-gem 'jquery-rails'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
