@@ -8,7 +8,12 @@ gem 'compass-rails'
 
 # 회원가입
 gem 'devise'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook' # facebook
+gem 'omniauth-naver' # naver
+gem 'rolify'     # role 관리
+gem 'authority'  # 권한설정
+gem 'simple_form'
+gem 'letter_opener', group: :development
 
 # 부트스트랩
 gem 'bootstrap', '~> 4.0.0.beta'
