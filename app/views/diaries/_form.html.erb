@@ -36,7 +36,9 @@
       <%= f.label :세부사항 %><br>
       <%= f.text_area :memo ,class: "form-control", id: "exampleFormControlTextarea1" ,rows: "10"%>
     </div>
-    <%= f.submit nil,class: "btn btn-outline-dark" %>
-    <%= link_to 'Show', @diary ,class: 'btn btn-dark'%> <%= link_to 'Back', diaries_path ,class: 'btn btn-dark'%>
+    <p class="float-right"> 
+      <%= f.submit '작성하기',class: "btn btn-outline-dark" %>
+      <%= link_to '뒤로', diaries_path ,class: 'btn btn-dark'%>
+    </p>
   <% end %>
 </div>

@@ -1,10 +1,10 @@
 class DiariesController < ApplicationController
   before_action :set_diary, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
   # GET /diaries
   # GET /diaries.json
   def index
-    @diaries = Diary.all
+    @diaries = Diary.where(user_id: current_user)
   end
 
   # GET /diaries/1
@@ -14,7 +14,7 @@ class DiariesController < ApplicationController
 
   # GET /diaries/new
   def new
-    @diary = Diary.new
+    @diary = current_user.diaries.build
   end
 
   # GET /diaries/1/edit
@@ -24,7 +24,7 @@ class DiariesController < ApplicationController
   # POST /diaries
   # POST /diaries.json
   def create
-    @diary = Diary.new(diary_params)
+    @diary = current_user.diaries.build(diary_params)
 
     respond_to do |format|
       if @diary.save

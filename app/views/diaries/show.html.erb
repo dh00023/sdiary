@@ -4,7 +4,6 @@
       <div class="col-md-6">
         <div class="jumbotron">
           <%= render "lego" %>
-          <%= link_to 'New Diary', new_diary_path,class: "btn btn-outline-dark" %>
         </div>
       </div>
       <div class="col-md-5">
@@ -13,11 +12,11 @@
             <h5 class="card-title">나의 성감대 : <%= @diary.category %></h5>
             <h5 class="card-title">세부사항</h5>
             <p class="card-text"><%= @diary.memo %></p>
-            <p class="mt-5"><%= link_to '수정하기', edit_diary_path(@diary),class: "btn btn-outline-dark" %> <%= link_to '뒤로', diaries_path ,class: "btn btn-outline-dark"%></p>
           </div>
        </div>
       </div>
     </div>
+    <p class="float-right mr-5"><%= link_to '수정하기', edit_diary_path(@diary),class: "btn btn-outline-dark" %> <%= link_to '뒤로', diaries_path ,class: "btn btn-dark"%></p>
   </div>
 </div>
 
