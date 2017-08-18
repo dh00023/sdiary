@@ -1,44 +1,52 @@
-<div class="col-md-5">
-  <%= form_for(@diary) do |f| %>
-    <% if @diary.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@diary.errors.count, "error") %> prohibited this diary from being saved:</h2>
+<div class="row">
+  <div class="col-md-6">
+    <div class="jumbotron">
+      <%= render "lego" %>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <%= form_for(@diary) do |f| %>
+      <% if @diary.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@diary.errors.count, "error") %> prohibited this diary from being saved:</h2>
 
-        <ul>
-        <% @diary.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+          <ul>
+          <% @diary.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <%= f.label :성감대부분%></br>
+        <label><%= f.radio_button :category,'얼굴', :id => 'diary_category_head'%><span> 얼굴 </span></label>
+        <label><%= f.radio_button :category,'머리카락', :id =>'diary_category_hair'%><span> 머리카락 </span></label>
+        <label><%= f.radio_button :category,'허리', :id =>'diary_category_waist'%><span> 허리 </span></label>
+        <label><%= f.radio_button :category,'왼팔뚝', :id =>'diary_category_shoulder_left'%><span> 왼팔뚝 </span></label>
+        <label><%= f.radio_button :category,'오른팔뚝', :id =>'diary_category_shoulder_right'%><span> 오른팔뚝 </span></label>
+        <label><%= f.radio_button :category,'왼팔',:id =>'diary_category_arm_left'%><span> 왼팔 </span></label>
+        <label><%= f.radio_button :category,'오른팔', :id =>'diary_category_arm_right'%><span> 오른팔 </span></label>
+        <label><%= f.radio_button :category,'왼손', :id =>'diary_category_hand_left'%><span> 왼손 </span></label>
+        <label><%= f.radio_button :category,'오른손',:id =>'diary_category_hand_right'%><span> 오른손 </span></label>
+        <label><%= f.radio_button :category,'오른다리',:id =>'diary_category_leg_right' %><span> 오른다리 </span></label>
+        <label><%= f.radio_button :category,'왼다리',:id =>'diary_category_leg_left'%><span> 왼쪽다리 </span></label>
+        <label><%= f.radio_button :category,'왼발',:id =>'diary_category_foot_left'%><span> 왼발 </span></label>
+        <label><%= f.radio_button :category,'오른발',:id =>'diary_category_foot_right'%><span> 오른발 </span></label>
+        <label><%= f.radio_button :category,'엉덩이',:id =>'diary_category_hip'%><span> 엉덩이 </span></label>
+        <label><%= f.radio_button :category,'몸',:id =>'diary_category_body'%><span> 몸 </span></label>
+        <label><%= f.radio_button :category,'등',:id =>'diary_category_back'%><span> 등 </span></label>
+        <label><%= f.radio_button :category,'중요부위',:id =>'diary_category_core'%><span> 중요부위 </span></label>
       </div>
-    <% end %>
-    <div class="form-group">
-      <%= f.label :성감대부분%></br>
-      <label><%= f.radio_button :category,'얼굴', :id => 'diary_category_head'%><span> 얼굴 </span></label>
-      <label><%= f.radio_button :category,'머리카락', :id =>'diary_category_hair'%><span> 머리카락 </span></label>
-      <label><%= f.radio_button :category,'허리', :id =>'diary_category_waist'%><span> 허리 </span></label>
-      <label><%= f.radio_button :category,'왼팔뚝', :id =>'diary_category_shoulder_left'%><span> 왼팔뚝 </span></label>
-      <label><%= f.radio_button :category,'오른팔뚝', :id =>'diary_category_shoulder_right'%><span> 오른팔뚝 </span></label>
-      <label><%= f.radio_button :category,'왼팔',:id =>'diary_category_arm_left'%><span> 왼팔 </span></label>
-      <label><%= f.radio_button :category,'오른팔', :id =>'diary_category_arm_right'%><span> 오른팔 </span></label>
-      <label><%= f.radio_button :category,'왼손', :id =>'diary_category_hand_left'%><span> 왼손 </span></label>
-      <label><%= f.radio_button :category,'오른손',:id =>'diary_category_hand_right'%><span> 오른손 </span></label>
-      <label><%= f.radio_button :category,'오른다리',:id =>'diary_category_leg_right' %><span> 오른다리 </span></label>
-      <label><%= f.radio_button :category,'왼다리',:id =>'diary_category_leg_left'%><span> 왼쪽다리 </span></label>
-      <label><%= f.radio_button :category,'왼발',:id =>'diary_category_foot_left'%><span> 왼발 </span></label>
-      <label><%= f.radio_button :category,'오른발',:id =>'diary_category_foot_right'%><span> 오른발 </span></label>
-      <label><%= f.radio_button :category,'엉덩이',:id =>'diary_category_hip'%><span> 엉덩이 </span></label>
-      <label><%= f.radio_button :category,'몸',:id =>'diary_category_body'%><span> 몸 </span></label>
-      <label><%= f.radio_button :category,'등',:id =>'diary_category_back'%><span> 등 </span></label>
-      <label><%= f.radio_button :category,'중요부위',:id =>'diary_category_core'%><span> 중요부위 </span></label>
-    </div>
 
-    <div class="form-group">
-      <%= f.label :세부사항 %><br>
-      <%= f.text_area :memo ,class: "form-control", id: "exampleFormControlTextarea1" ,rows: "10"%>
+      <div class="form-group">
+        <%= f.label :세부사항 %><br>
+        <%= f.text_area :memo ,class: "form-control", id: "exampleFormControlTextarea1" ,rows: "10"%>
+      </div>
     </div>
-    <p class="float-right"> 
-      <%= link_to '뒤로', diaries_path ,class: 'btn btn-outline-dark'%>
-      <%= f.submit '작성하기',class: "btn btn-dark" %>
-    </p>
-  <% end %>
 </div>
+<p class="float-right mr-5"> 
+  <%= link_to '뒤로', diaries_path ,class: 'btn btn-outline-dark'%>
+  <%= f.submit '작성하기',class: "btn btn-dark" %>
+</p>
+  <% end %>
+
