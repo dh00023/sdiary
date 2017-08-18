@@ -14,7 +14,7 @@ class PostsController < ApplicationController
         @posts = Post.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
       end
     else
-      redirect_to warning_url
+      redirect_to "http://jr.naver.com/"
     end    
   end
 

@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active"><%= link_to "게시판", posts_path, class: "nav-link"%></li>
+        <li class="nav-item active"><%= link_to "게시판", posts_path, class: "nav-link", :data => {:confirm=>'만 19세 이상 사용가능한 게시판입니다.'}%></li>
         <li class="nav-item active"><%= link_to "다이어리", diaries_path, class: "nav-link"%></li>
         <li class="nav-item active"><%= link_to "STATIC", chart_path, class: "nav-link"%></li>
         <li class="nav-item active"><%= link_to "ABOUT", about_path, class: "nav-link"%></li>    
