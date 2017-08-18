@@ -17,9 +17,10 @@
 @import "bootstrap";
 
 /* common settings - 승하는 보아라 */
-*{
-    font-family: 'Jeju Gothic', serif; /*폰트를 'Open Sans'로 하는데, 없으면 sans-serif로 해라*/
+html{
+    font-family: 'Jeju Gothic', serif;
 }
+
 
 // navbar
 .navbar-expand-lg {
@@ -30,7 +31,7 @@ a.navbar-brand {
     color: #eb4a5f;
 }
 a{
-    color: #000000;    
+    color: #000000;
 }
 .btn-secondary:hover {
     color: #fff;
@@ -69,6 +70,17 @@ a{
     background-color: #eb4a5f;
     border-color: #eb4a5f;
 }
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    margin-top: -70px;
+    margin-right: 15px;
+}
+
+
 .jumbotron {
     padding: 2rem 1rem;
     background-color: #ffffff;

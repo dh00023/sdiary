@@ -4,6 +4,11 @@
       <%= render "lego" %>
     </div>
   </div>
+  <div id="blue_box">
+    <div id="left"></div>
+    <div class="divider"></div>
+    <div id="right"></div>
+  </div>
   <div class="col-md-5">
     <%= form_for(@diary) do |f| %>
       <% if @diary.errors.any? %>
@@ -42,11 +47,12 @@
         <strong><%= f.label :세부사항 %><br></strong>
         <%= f.text_area :memo ,class: "form-control", id: "exampleFormControlTextarea1" ,rows: "10"%>
       </div>
+        <p class="float-right mr-0.5">
+        <%= link_to '뒤로', diaries_path ,class: 'btn btn-outline-dark'%>
+        <%= f.submit '작성하기',class: "btn btn-dark" %>
+        </p>
     </div>
 </div>
-<p class="float-right mr-5">
-  <%= link_to '뒤로', diaries_path ,class: 'btn btn-outline-dark'%>
-  <%= f.submit '작성하기',class: "btn btn-dark" %>
-</p>
+
   <% end %>
 
