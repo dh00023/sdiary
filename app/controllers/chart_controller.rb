@@ -5,4 +5,7 @@ class ChartController < ApplicationController
 
   def warning
   end
+
+  def about
+  end
 end
