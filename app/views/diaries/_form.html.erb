@@ -18,7 +18,7 @@
         </div>
       <% end %>
       <div class="form-group">
-        <%= f.label :성감대부분%></br>
+        <strong><%= f.label :성감대 %></br></strong>
         <label class ="radio_label"><%= f.radio_button :category,'얼굴', :id => 'diary_category_head'%><span> 얼굴 </span></label>
         <label class ="radio_label"><%= f.radio_button :category,'머리카락', :id =>'diary_category_hair'%><span> 머리카락 </span></label>
         <label class ="radio_label"><%= f.radio_button :category,'허리', :id =>'diary_category_waist'%><span> 허리 </span></label>
@@ -39,7 +39,7 @@
       </div>
 
       <div class="form-group radio">
-        <%= f.label :세부사항 %><br>
+        <strong><%= f.label :세부사항 %><br></strong>
         <%= f.text_area :memo ,class: "form-control", id: "exampleFormControlTextarea1" ,rows: "10"%>
       </div>
     </div>
