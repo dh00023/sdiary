@@ -27,6 +27,9 @@ html{
     border-bottom: 1px solid #acacac;
     padding: 8px 8%;
 }
+.nav-link:hover{
+    color: #eb4a5f;
+}
 a.navbar-brand {
     color: #eb4a5f;
 }
@@ -61,13 +64,14 @@ a{
     margin-top:50px;
 }
 .btn-light:active, .btn-light.active, .show > .btn-light.dropdown-toggle {
-    background-color: #eb4a5f;
+    background-color: #ffffff;
     background-image: none;
     border-color: #eb4a5f;
 }
+
 .btn-light {
-    color: #ffffff;
-    background-color: #eb4a5f;
+    color: #eb4a5f;
+    background-color: #ffffff;
     border-color: #eb4a5f;
 }
 
@@ -115,9 +119,80 @@ a{
 }
 .card{
     border: none;
-    background-color: rgba( 255, 255, 255, 0 );;
+    background-color: rgba( 255, 255, 255, 0 );
 }
 .card_image{
     width: 170px;
     height: 170px;
+}
+
+.btn.btn-outline-dark:hover{
+    background-color: #e86d7d;
+    color: white;
+    border: #ffffff;
+}
+
+
+.radio_label{
+    width:100px;
+}
+
+$radioBtn-size:14px;
+$active-color: #fa1634;
+$inactive-color: #FFE4C4;
+
+input[type="checkbox"]{
+    appearance: none;
+    width: $radioBtn-size;
+    height: $radioBtn-size;
+    margin: 0 $radioBtn-size / 2;
+    outline: $radioBtn-size / 2 solid $inactive-color;
+    outline-offset: $radioBtn-size / -2;
+    cursor: pointer;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    transform: rotate(45deg) scale(1);
+    will-change: transform;
+
+    &:checked {
+        animation: active 1s ease forwards;
+    }
+}
+
+
+@keyframes active {
+    25% {
+        transform: rotate(45deg) scale(1.5);
+    }
+    75% {
+        transform: rotate(45deg) scale(1.25);
+    }
+    50%,100% {
+        transform: rotate(45deg) scale(1);
+        box-shadow: 0 $radioBtn-size / -2 0 0 $active-color,    $radioBtn-size / -2 0 0 0 $active-color;
+        outline-color: $active-color;
+    }
+}
+
+.btn.btn-dark:hover{
+    background-color: #e86d7d;
+    color: white;
+    border: #e86d7d;
+}
+.page-item.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: #eb4a5f;
+    border-color: #eb4a5f;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #eb4a5f;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }

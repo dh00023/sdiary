@@ -3,9 +3,6 @@ class ChartController < ApplicationController
   	@diaries = Diary.all
   end
 
-  def warning
-  end
-
   def about
   end
 end
