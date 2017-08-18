@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20170817120301) do
     t.integer  "user_id"
   end
 
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
