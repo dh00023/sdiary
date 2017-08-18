@@ -16,22 +16,43 @@
 
 @import "bootstrap";
 
-
-body{
-    background-image: url('back-ground.jpg');
-}
 /* common settings - 승하는 보아라 */
 *{
-    a:link { color: #181818;  text-decoration: none;}
-
     font-family: 'Jeju Gothic', serif; /*폰트를 'Open Sans'로 하는데, 없으면 sans-serif로 해라*/
-     a:link { color: #181818;  text-decoration: none;}
-
-    a:visited { color: #181818; text-decoration: none;}
-    a:hover { color: #181818; text-decoration: none;}
 }
 
+// navbar
+.navbar-expand-lg {
+    border-bottom: 1px solid #acacac;
+    padding: 8px 70px;
+}
+a.navbar-brand {
+    color: #eb4a5f;
+}
+a {
+    color: #eb4a5f;    
+}
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #eb4a5f;
+    border-color: #eb4a5f;
+}
+.btn-secondary:active, .btn-secondary.active, .show > .btn-secondary.dropdown-toggle {
+    background-color: #eb4a5f;
+    background-image: none;
+    border-color: #eb4a5f;
+}
+// button
+.btn-dark {
+    color: #fff;
+    background-color: #eb4a5f;
+    border-color: #eb4a5f;
+}
 
+.btn-outline-dark {
+    color: #eb4a5f;
+    border-color: #eb4a5f;
+}
 
 .containerbox{
     display:flex;
@@ -54,32 +75,13 @@ body{
     border-radius: 0.3rem;
     border: 0px solid #000000;
 }
-.navbar-expand-lg{
-	border-bottom: 0px solid #000000;
-}
+
 .table thead th {
     border-bottom: 1px solid #000000;
     border-top: 1px solid #000000;
 }
 #loginjumbo{
 	height: 389px;
-}
-
-.nav-link{
-    color: #ffffff ;
-}
-
-.btn-dark {
-    color: #fff;
-    background-color: #72e1f0;
-    border-color: #72e1f0;
-}
-
-.btn-outline-dark {
-    color: #72e1f0;
-    background-color: transparent;
-    background-image: none;
-    border-color: #72e1f0;
 }
 
 .form-control {
