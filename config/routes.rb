@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'chart/show', as: "chart"
+  get 'chart/index', as: "welcome"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root 'chart#index', as: :unauthenticated_root
     end
   end  
   resources :diaries
