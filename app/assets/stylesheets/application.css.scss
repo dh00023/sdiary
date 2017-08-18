@@ -136,3 +136,21 @@ a{
     color: white;
     border: #e86d7d;
 }
+
+.page-item.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: #eb4a5f;
+    border-color: #eb4a5f;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #eb4a5f;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
