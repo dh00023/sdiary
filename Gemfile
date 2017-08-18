@@ -11,7 +11,10 @@ gem 'omniauth-facebook'
 gem 'omniauth-naver' # naver
 gem 'rolify'     # role 관리
 gem 'authority'  # 권한설정
-gem "letter_opener", :group => :development
+
+#font
+gem "font-awesome-rails"
+
 
 # 부트스트랩
 gem 'bootstrap', '~> 4.0.0.beta'

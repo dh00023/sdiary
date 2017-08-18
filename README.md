@@ -41,6 +41,8 @@ Post - Category : N대 1관계
 - gem 'omniauth-naver' # naver
 - gem 'rolify'     # role 관리
 - gem 'authority'  # 권한설정
+- gem "font-awesome-rails"
+
 
 ## 역할분배
 - 이미지(성감대 선택) : 선홍, 다혜, 지연
@@ -61,6 +63,8 @@ Post - Category : N대 1관계
 - 좌우 비대칭 관계 (scss 클래스를 2번으로 추가해서 바꿈)
 - show, index db 데이터 이름 수정 
 - user_sign_in, user_sign_up, user_edit page revised
+- 하트 추가 , 색 변경
+- 폰트 추가 
 
 ## 다혜
 - Diary CRUD , model
