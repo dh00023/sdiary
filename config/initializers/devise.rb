@@ -248,7 +248,8 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
 
-  config.omniauth :facebook, "APP_ID", "APP_SECRET"
+  config.omniauth :facebook, ENV["FB_APP_ID"], ENV["FB_APP_SECRET"]
+  config.omniauth :naver, ENV["FB_APP_ID"], ENV["FB_APP_SECRET"]
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

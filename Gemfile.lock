@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.5.1)
+      public_suffix (~> 2.0, >= 2.0.2)
     arel (6.0.4)
     authority (3.3.0)
       activesupport (>= 3.0.0)
@@ -112,6 +114,10 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.6)
@@ -144,6 +150,7 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     popper_js (1.11.1)
+    public_suffix (2.0.5)
     rack (1.6.8)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -238,6 +245,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  letter_opener
   omniauth-facebook
   omniauth-naver
   rails (= 4.2.5)
