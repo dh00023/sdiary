@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def index
     if current_user.birth <= 19981231
       if params[:category].blank?
-        @posts = Post.paginate(:page => params[:page], :per_page => 10)
+        @posts = Post.paginate(:page => params[:page], :per_page => 10).order("created_at desc")
       else
         @category_id = Category.find_by(name: params[:category]).id
         @posts = Post.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
