@@ -27,6 +27,9 @@ html{
     border-bottom: 1px solid #acacac;
     padding: 8px 8%;
 }
+.nav-link:hover{
+    color: #eb4a5f;
+}
 a.navbar-brand {
     color: #eb4a5f;
 }
@@ -120,4 +123,16 @@ a{
 .card_image{
     width: 170px;
     height: 170px;
+}
+ 
+.btn.btn-outline-dark:hover{
+    background-color: #e86d7d; 
+    color: white;
+    border: #ffffff;
+}
+
+.btn.btn-dark:hover{
+    background-color: #e86d7d; 
+    color: white;
+    border: #e86d7d;
 }
