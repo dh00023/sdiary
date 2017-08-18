@@ -21,14 +21,14 @@
     margin-top:50px;
 }
 .btn-light:active, .btn-light.active, .show > .btn-light.dropdown-toggle {
-    background-color: #ffffff;
+    background-color: #ffd777;
     background-image: none;
-    border-color: #ffffff;
+    border-color: #ffd777;
 }
 .btn-light {
     color: #111;
-    background-color: #ffffff;
-    border-color: #ffffff;
+    background-color: #ffd777;
+    border-color: #ffd777;
 }
 .jumbotron {
     padding: 2rem 1rem;
@@ -37,7 +37,7 @@
     border: 2px solid #000000;
 }
 .navbar-expand-lg{
-	border-bottom: 1px solid #000000;	
+	border-bottom: 0px solid #000000;	
 }
 .table thead th {
     border-bottom: 1px solid #000000;
@@ -45,4 +45,8 @@
 }
 #loginjumbo{
 	height: 389px;
+}
+
+.nav-link{
+    color: #ffffff ;
 }
