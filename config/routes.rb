@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'chart/show', as: "chart"
-  get 'chart/index', as: "welcome"
+  get 'chart/warning', as: "warning"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
