@@ -6,19 +6,31 @@
           <%= render "lego" %>
         </div>
       </div>
-      <div class="col-md-5">
+    <div id="blue_box">
+    <div id="left"></div>
+    <div class="divider"></div>
+    <div id="right"></div>
+    </div>
+      <div class="col-md-6">
         <div class="form-group">
           <div class="card-body">
-            <h5 class="card-title">나의 성감대 : <%= @diary.category %></h5>
-            <h5 class="card-title">세부사항</h5>
-            <p class="card-text"><%= @diary.memo %></p>
-          </div>
-       </div>
-      </div>
-    </div>
-    <p class="float-right mr-5"><%= link_to '수정하기', edit_diary_path(@diary),class: "btn btn-outline-dark" %> <%= link_to '뒤로', diaries_path ,class: "btn btn-dark"%></p>
-  </div>
-</div>
+            <div class="card-title1">
+              <h4><strong>나의 성감대</strong></h4>
+              <p>: <%= @diary.category %></p>
+            
+            </div>
+            <h5><strong>세부사항</strong></h5>
+            <div class="card-title2">
+                        <p class="card-text" ><%= @diary.memo %></p>
+            </div>
+
+          </div><!--cardbody-->
+       </div><!--formgroup-->
+          <p class="float-right mr-5"><%= link_to '수정하기', edit_diary_path(@diary),class: "btn btn-outline-dark" %> <%= link_to '뒤로', diaries_path ,class: "btn btn-dark"%></p>
+      </div><!--col-md-5-->
+    </div><!--row-->
+  </div><!--panelbody-->
+</div><!--panel panel-defalut-->
 
 
 
