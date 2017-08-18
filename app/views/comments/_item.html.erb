@@ -1,5 +1,6 @@
 <td class="row" id="comment-<%=comment.id%>">  
-    <%= comment.content %>
+    <p class="text ml-3"><%= comment.content %></p>
+    <p class="ml-auto text-muted mr-3"><%= comment.created_at %></p>
     <% if comment.user_id == current_user.id %> 
     <%= link_to "삭제", comment_path(comment),
                         method: :delete,
