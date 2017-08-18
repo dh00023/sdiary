@@ -1,10 +1,6 @@
-<p id="notice"><%= notice %></p>
 <div class="jumbotron">
   <p class="text-muted ml-0">
-    <%if params[:category].blank?%>전체게시판
-    <% else %>
       <%= @category.name %>게시판
-    <% end %>
   </p>
 
   <h1><%= @post.title %></h1>
@@ -16,8 +12,10 @@
   <p class="my-5"><%= @post.content.html_safe %></p>
   <hr>
   <div class="float-right">
+  <% if current_user.nickname == @post.user.nickname %>
     <%= link_to '수정하기', edit_post_path(@post),class: "btn btn-outline-dark btn-sm" %>
     <%= link_to '삭제하기', @post, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-outline-dark btn-sm"%>
+  <% end %>
   </div>
   <p class="texr mt-5" style="color:#EB4A5F">댓글</p>
   <table class="table">
