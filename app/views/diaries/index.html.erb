@@ -16,8 +16,8 @@
               <thead>
                 <tr>
                   <th>성감대</th>
-                  <th>Memo</th>
-                  <th>link</th>
+                  <th>내용</th>
+                  <th> </th>
                   <th></th>
                   <th></th>
                 </tr>
@@ -27,9 +27,9 @@
                 <tr>
                   <td><%= diary.category %></td>
                   <td><%= truncate(diary.memo,:escape => false, :omission => '...',:length => 10 )%></td>
-                  <td><%= link_to 'Show', diary ,class: "btn btn-outline-dark btn-sm"%></td>
-                  <td><%= link_to 'Edit', edit_diary_path(diary) ,class: "btn btn-outline-dark btn-sm" %></td>
-                  <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: '삭제하시겠습니까?' } ,class: "btn btn-outline-dark btn-sm"%></td>
+                  <td><%= link_to '<i class="fa fa-eye"></i>'.html_safe, diary %></td>
+                  <td><%= link_to '<i class="fa fa-pencil" ></i>'.html_safe, edit_diary_path(diary) %></td>
+                  <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, diary, method: :delete, data: { confirm: '삭제하시겠습니까?' } %></td>
                 </tr>
               <% end %>
               </tbody>
