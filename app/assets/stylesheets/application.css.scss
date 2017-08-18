@@ -13,7 +13,14 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome";
 @import "bootstrap";
+
+/* common settings - 승하는 보아라 */
+*{
+    font-family: 'Open Sans', sans-serif; /*폰트를 'Open Sans'로 하는데, 없으면 sans-serif로 해라*/
+    color: #181818
+}
 
 .containerbox{
     display:flex;
@@ -37,7 +44,7 @@
     border: 2px solid #000000;
 }
 .navbar-expand-lg{
-	border-bottom: 0px solid #000000;	
+	border-bottom: 0px solid #000000;
 }
 .table thead th {
     border-bottom: 1px solid #000000;
