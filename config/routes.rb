@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'chart#index', as: :unauthenticated_root
+      root 'devise/sessions#new', as: :unauthenticated_root
     end
-  end  
+  end
   resources :diaries
 
   resources :posts do
