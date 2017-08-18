@@ -27,10 +27,13 @@
               </div>
 
               <% if devise_mapping.rememberable? %>
+               <% end %>
                 <div class="form-group col-md-12">
                 <%= f.input :remember_me, as: :boolean, inline_label: true%>
                 </div>
-              <% end %>
+
+
+
 
                 <!-- <!%= f.input :remember_me, as: :boolean, inline_label: true, label: false if devise_mapping.rememberable? %> -->
 
