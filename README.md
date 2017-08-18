@@ -41,6 +41,7 @@ Post - Category : N대 1관계
 - gem 'omniauth-naver' # naver
 - gem 'rolify'     # role 관리
 - gem 'authority'  # 권한설정
+- gem 'google-webfonts-rails' #google font 사용가능하게
 
 ## 역할분배
 - 이미지(성감대 선택) : 선홍, 다혜, 지연
