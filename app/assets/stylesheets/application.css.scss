@@ -27,6 +27,9 @@ html{
     border-bottom: 1px solid #acacac;
     padding: 8px 8%;
 }
+.nav-link:hover{
+    color: #eb4a5f;
+}
 a.navbar-brand {
     color: #eb4a5f;
 }
@@ -61,13 +64,14 @@ a{
     margin-top:50px;
 }
 .btn-light:active, .btn-light.active, .show > .btn-light.dropdown-toggle {
-    background-color: #eb4a5f;
+    background-color: #ffffff;
     background-image: none;
     border-color: #eb4a5f;
 }
+
 .btn-light {
-    color: #ffffff;
-    background-color: #eb4a5f;
+    color: #eb4a5f;
+    background-color: #ffffff;
     border-color: #eb4a5f;
 }
 
@@ -115,12 +119,17 @@ a{
 }
 .card{
     border: none;
-    background-color: rgba( 255, 255, 255, 0 );;
+    background-color: rgba( 255, 255, 255, 0 );
 }
 .card_image{
     width: 170px;
+    height: 170px;
+}
 
-    height: 180px;
+.btn.btn-outline-dark:hover{
+    background-color: #e86d7d;
+    color: white;
+    border: #ffffff;
 }
 
 
@@ -167,3 +176,10 @@ input[type="checkbox"]{
 
 
 
+=======
+.btn.btn-dark:hover{
+    background-color: #e86d7d;
+    color: white;
+    border: #e86d7d;
+}
+>>>>>>> ae0918d4587df742ebbf98ca9fb7ee6965ef3e5f
