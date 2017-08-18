@@ -8,6 +8,10 @@
       </div>
       <div class="col-md-6">
         <div class="form-group">
+          
+        <%= link_to '새로쓰기', new_diary_path ,class: "btn btn-dark float-right mr-2"%>
+
+          
         <table class="table table-hover">
           <thead>
             <tr>
@@ -22,7 +26,7 @@
               <% @diaries.each do |diary| %>
             <tr>
               <td><%= diary.category %></td>
-              <td><%= truncate(diary.memo,:escape => false, :omission => '...',:length => 23 )%></td>
+              <td><%= truncate(diary.memo,:escape => false, :omission => '...',:length => 10 )%></td>
               <td><%= link_to 'Show', diary ,class: "btn btn-outline-dark btn-sm"%></td>
               <td><%= link_to 'Edit', edit_diary_path(diary) ,class: "btn btn-outline-dark btn-sm" %></td>
               <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: '삭제하시겠습니까?' } ,class: "btn btn-outline-dark btn-sm"%></td>
@@ -33,7 +37,6 @@
         </div>
       </div>
     </div>
-    <%= link_to '새로쓰기', new_diary_path ,class: "btn btn-dark float-right mr-2"%>
   </div>
 </div>
 
