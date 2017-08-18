@@ -3,20 +3,20 @@
   <h1><%= @post.title %></h1>
   <hr class="my-4">
   <div class="row">
-    <p class="text-muted ml-3"></p>
-    <p class="ml-auto text-muted mr-3">글쓴이 : 치즈스틱스 날짜 : <%= @post.created_at %></p>
+    <p class="text-muted ml-3"><%= @category.name %> 게시판</p>
+    <p class="ml-auto text-muted mr-3">글쓴이 : <%= @post.user.nickname %> | <%= @post.created_at.strftime("%Y.%m.%d %H:%M") %></p>
   </div>
 
   <p class="my-5"><%= @post.content.html_safe %></p>
-  <hr class="my-4">
+  <hr>
   <div class="float-right">
-    <%= link_to 'Edit', edit_post_path(@post),class: "btn btn-outline-dark btn-sm" %>
-    <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-outline-dark btn-sm"%>
+    <%= link_to '수정하기', edit_post_path(@post),class: "btn btn-outline-dark btn-sm" %>
+    <%= link_to '삭제하기', @post, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-outline-dark btn-sm"%>
   </div>
   <p class="text-muted mt-5">댓글</p>
   <table class="table">
     <tbody>
-      <tr>
+      <tr id="comments">
       <% @post.comments.each do |comment| %>
           <%= render partial: "comments/item", locals: { comment: comment } %>
       <% end %>
@@ -26,7 +26,7 @@
     <%= form_for [@post, @post.comments.new], remote: true do |f| %>
       <div class="form-group">
         <%= f.text_area :content ,class: "form-control" ,rows: "10"%>
+        <%= f.submit '작성하기', class: "btn btn-dark float-right" %>
+      <% end %>
       </div>
-      <%= f.submit nil, class: "btn btn-outline-dark float-right" %>
-    <% end %>
 </div>

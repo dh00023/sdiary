@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'chart/show', as: "chart"
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     authenticated :user do
@@ -15,5 +17,4 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :new, :create]
   end
   resources :comments, only: [:show, :edit, :update, :destroy]
-
 end
