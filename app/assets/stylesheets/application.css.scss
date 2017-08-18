@@ -17,18 +17,10 @@
 @import "bootstrap";
 
 /* common settings - 승하는 보아라 */
-*{
-<<<<<<< HEAD
-    a:link { color: #181818;  text-decoration: none;}
-    font-family: 'Jeju Gothic', serif; /*폰트를 'Open Sans'로 하는데, 없으면 sans-serif로 해라*/
-    a:link { color: #181818;  text-decoration: none;}
-
-    a:visited { color: #181818; text-decoration: none;}
-    a:hover { color: #181818; text-decoration: none;}
-=======
-    font-family: 'Jeju Gothic', serif; /*폰트를 'Open Sans'로 하는데, 없으면 sans-serif로 해라*/
->>>>>>> 426895833e9266305bb4983c76e02fa8e5c70c64
+html{
+    font-family: 'Jeju Gothic', serif;
 }
+
 
 // navbar
 .navbar-expand-lg {
@@ -39,7 +31,7 @@ a.navbar-brand {
     color: #eb4a5f;
 }
 a{
-    color: #000000;    
+    color: #000000;
 }
 .btn-secondary:hover {
     color: #fff;
