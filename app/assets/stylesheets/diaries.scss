@@ -756,7 +756,7 @@ input[type="radio"]{
     margin-top: 1.5em;
 }
 
-.form-control:focus {   
+.form-control:focus {
     border-color: #eb4a5f;
     box-shadow: 0 0px 0px #fa1634 inset, 0 0 3px #fa1634;
     outline: 0 none;
@@ -769,4 +769,15 @@ input[type="radio"]{
     bottom:10%;
     border-left: 1px solid #e6e6e6;
     margin-top: 3em;
+}
+.card-title1{
+
+    margin: 1em 1em 3em 0em;
+    
+}
+.card-title2{
+    background-color: #f2f2f2;
+    padding: 1em 1em 1em 1em;
+    margin: 1em 1em 1em 0em;
+    
 }
