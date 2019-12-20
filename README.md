@@ -1,17 +1,37 @@
-# 성감대다이어리
+# sdiary
+
+![Ruby on Rails](https://img.shields.io/badge/rails-v4.2.5-green)
+![bootstrap](https://img.shields.io/badge/bootstrap-4.0.0.beta-green.svg)
+![sqlLite3](https://img.shields.io/badge/sqlLite3-black.svg)
+
+---
+아이디어톤: 
+해커톤: 20170718-20170719
+참여자: 김승하, 김선홍, 김지훈 송지연, 신명상, 이현경, 정다혜
+---
+
+<!-- 대표 페이지 이미지 추가, 정보 가져오기 -->
+sdiary는 숨겨지고 왜곡된 성에서 '나'에게로부터 솔직해지기를 바라는 프로젝트로 '나'에게부터 솔직해지기를 바라는 프로젝트입니다.
+'나'에게 조금 더 관심을 가지고 성을 더 제대로 즐기기위해 시작되었습니다.
+
+![](./sdiary.JPG)
 
 ## Controller
+
 - Diary
 - Post
 - Comment
 
 ## 모델
+
 - User : Omniauth Facebook
 - Diary(주모델,컨트롤러) : category(라디오 버튼으로! 머리(head),머리카락(hair), 허리(waist), 팔(shoulder_left,arm_left,shoulder_right,arm_right), 다리(leg_left, leg_right)(2), 발(foot) 손(hand_left,wrist_left,hand_right,wrist_right), 중요부위(core), 엉덩이(hip), 몸(body), 등(back) - 18개], memo 
 - Post(다른사람과 공유) : title, content, category 
 - Comment(다른사람과 공유)
 - Category(다른사람과 공유) : name, category_id
+
 ### 관계
+
 User - Diary : 1 대 N 관계
 User - Post : 1 대 N 관계
 User - Comment : 1 대 N 관계
@@ -19,6 +39,7 @@ Post - Comment : 1 대 N 관계
 Post - Category : N대 1관계
 
 ## 페이지
+
 - index
 - login
 - signup
@@ -41,20 +62,20 @@ Post - Category : N대 1관계
 - gem 'omniauth-naver' # naver
 - gem 'rolify'     # role 관리
 - gem 'authority'  # 권한설정
-<<<<<<< HEAD
 - gem 'google-webfonts-rails' #google font 사용가능하게
-=======
 - gem "font-awesome-rails"
 
->>>>>>> 77528865f2caffd6a413236c31f90480d37c026d
 
 ## 역할분배
-- 이미지(성감대 선택) : 선홍, 다혜, 지연
-- 로그인 : 명상, 지훈
-- 게시판 : 현경, 승하
-- 차트 : 다혜
 
-## 김선홍
+- 기획자 : 송지연
+- 이미지(성감대 선택) : 김선홍, 송지연, 정다혜
+- 로그인 : 김지훈, 신명상
+- 게시판 : 김승하, 이현경
+- 차트 : 정다혜
+
+### 김선홍
+
 - diaries.scss lego코드 추가
 - index.html.erb lego코드 추가, script 코드 추가
 - edit,new 수정
@@ -70,7 +91,8 @@ Post - Category : N대 1관계
 - 하트 추가 , 색 변경
 - 폰트 추가 
 
-## 다혜
+### 정다혜
+
 - Diary CRUD , model
 - bootstrap적용
 - navbar
@@ -83,11 +105,4 @@ Post - Category : N대 1관계
 - user(생년월일, 이름, 별명, 전화번호 추가)
 - routes설정
 - chart-kick
-
-#### 해야할일
-1. 댓글(수정,삭제버튼만들기)
-4. 디플로이
-5. 로고, 색지정하기
-6. 네이버로그인(명상)
-7. 우선 생년월일로 성인만 게시판접근가능하게만들기
-8. 확실한 디자인, 게시판이름 설정하기
+- deploy(heroku)
