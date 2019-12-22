@@ -1,20 +1,30 @@
-# sdiary
-
-![Ruby on Rails](https://img.shields.io/badge/rails-v4.2.5-green)
-![bootstrap](https://img.shields.io/badge/bootstrap-4.0.0.beta-green.svg)
-![sqlLite3](https://img.shields.io/badge/sqlLite3-black.svg)
-
 ---
 아이디어톤: 
 해커톤: 20170718-20170719
 참여자: 김승하, 김선홍, 김지훈 송지연, 신명상, 이현경, 정다혜
 ---
 
+# sdiary
+
+![Ruby on Rails](https://img.shields.io/badge/rails-v4.2.5-green)
+![bootstrap](https://img.shields.io/badge/bootstrap-4.0.0.beta-green.svg)
+![sqlLite3](https://img.shields.io/badge/sqlLite3-black.svg)
+
+
 <!-- 대표 페이지 이미지 추가, 정보 가져오기 -->
 sdiary는 숨겨지고 왜곡된 성에서 '나'에게로부터 솔직해지기를 바라는 프로젝트로 '나'에게부터 솔직해지기를 바라는 프로젝트입니다.
 '나'에게 조금 더 관심을 가지고 성을 더 제대로 즐기기위해 시작되었습니다.
 
-![](./sdiary.JPG)
+![](./assets/sdiary.JPG)
+
+#### [Sdiary Live Demo](https://sdiary5.herokuapp.com/)
+
+```
+test / testtest
+계정으로 접속해 테스트해볼 수 있습니다.
+```
+
+![image-20191223073133181](./assets/image-20191223073133181.png)
 
 ## Controller
 
