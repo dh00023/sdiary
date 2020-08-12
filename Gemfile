@@ -16,7 +16,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'simple_form'
 
 # 차트
-gem 'chartkick', '~> 2.2', '>= 2.2.4'
+gem 'chartkick', '~> 3.4'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
